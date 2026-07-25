@@ -1,0 +1,480 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: support@xflowpay.com
+    name: Xflow Support
+    url: https://xflowpay.com
+  description: The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.
+  termsOfService: https://docs.xflowpay.com/platform-agreement
+  title: Xflow Accounts BalanceTransactions API
+  version: '2024-02-05'
+servers:
+- url: https://api.xflowpay.com/
+security:
+- bearerAuth: []
+tags:
+- name: BalanceTransactions
+paths:
+  /v1/balance_transactions:
+    get:
+      description: Returns a list of BalanceTransactions.
+      operationId: ListBalanceTransactions
+      parameters:
+      - description: Xflow categorization of BalanceTransactions. This can be `available`, `fee_advance`, `payout_processing` and `pending`.
+        in: query
+        name: category
+        required: false
+        schema:
+          items:
+            enum:
+            - available
+            - fee_advance
+            - payout_processing
+            - pending
+            - processing
+            type: string
+          type: array
+      - description: This header specifies the connected user's account on behalf of which the request is being made.
+        in: header
+        name: Xflow-Account
+        required: false
+        schema:
+          type: string
+      - description: Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time).
+        in: query
+        name: created.eq
+        required: false
+        schema:
+          format: unix-time
+          type: integer
+      - description: Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time).
+        in: query
+        name: created.gt
+        required: false
+        schema:
+          format: unix-time
+          type: integer
+      - description: Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time).
+        in: query
+        name: created.gte
+        required: false
+        schema:
+          format: unix-time
+          type: integer
+      - description: Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time).
+        in: query
+        name: created.lt
+        required: false
+        schema:
+          format: unix-time
+          type: integer
+      - description: Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time).
+        in: query
+        name: created.lte
+        required: false
+        schema:
+          format: unix-time
+          type: integer
+      - description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
+        in: query
+        name: currency
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+      - description: A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list.
+        in: query
+        name: ending_before
+        required: false
+        schema:
+          type: string
+      - description: A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed.
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: integer
+      - description: Unique identifier for the payment object associated with the BalanceTransaction.
+        in: query
+        name: payment_id
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+      - description: A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list.
+        in: query
+        name: starting_after
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          headers:
+            Date:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Connection:
+              schema:
+                type: string
+            x-amzn-RequestId:
+              schema:
+                type: string
+            xflow-request-id:
+              schema:
+                type: string
+            x-amz-apigw-id:
+              schema:
+                type: string
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    items:
+                      $ref: '#/components/schemas/balance_transaction'
+                    type: array
+                  has_next:
+                    description: True if this list has another page of items after this one that can be fetched.
+                    type: boolean
+                  object:
+                    description: String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
+                    enum:
+                    - list
+                    type: string
+                title: ListBalanceTransactionsResponse
+                type: object
+          description: Successful response.
+        default:
+          headers:
+            Date:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Connection:
+              schema:
+                type: string
+            x-amzn-RequestId:
+              schema:
+                type: string
+            xflow-request-id:
+              schema:
+                type: string
+            x-amz-apigw-id:
+              schema:
+                type: string
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_object'
+          description: Error response.
+      tags:
+      - BalanceTransactions
+  /v1/balance_transactions/{balance_transaction}:
+    get:
+      description: Retrieves the details of a BalanceTransaction.
+      operationId: RetrieveBalanceTransaction
+      parameters:
+      - description: This header specifies the connected user's account on behalf of which the request is being made.
+        in: header
+        name: Xflow-Account
+        required: false
+        schema:
+          type: string
+      - in: path
+        name: balance_transaction
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        '200':
+          headers:
+            Date:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Connection:
+              schema:
+                type: string
+            x-amzn-RequestId:
+              schema:
+                type: string
+            xflow-request-id:
+              schema:
+                type: string
+            x-amz-apigw-id:
+              schema:
+                type: string
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/balance_transaction'
+          description: Successful response.
+        default:
+          headers:
+            Date:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Connection:
+              schema:
+                type: string
+            x-amzn-RequestId:
+              schema:
+                type: string
+            xflow-request-id:
+              schema:
+                type: string
+            x-amz-apigw-id:
+              schema:
+                type: string
+            X-Amzn-Trace-Id:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error_object'
+          description: Error response.
+      tags:
+      - BalanceTransactions
+components:
+  schemas:
+    balance_transaction:
+      description: BalanceTransactions (BTs) are created by payments and represent funds being credited and debited in the Available and Pending compartments. Note that a single Payment can create multiple BTs.
+      properties:
+        amount:
+          description: Amount value associated with the BalanceTransaction.
+          type: string
+        category:
+          description: Xflow categorization of BalanceTransactions. This can be `available`, `fee_advance`, `payout_processing` and `pending`.
+          enum:
+          - available
+          - fee_advance
+          - payout_processing
+          - pending
+          type: string
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the BalanceTransaction object was created.
+          format: unix-time
+          type: integer
+        currency:
+          description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
+          enum:
+          - AED
+          - AUD
+          - CHF
+          - CZK
+          - DKK
+          - EUR
+          - GBP
+          - HKD
+          - INR
+          - NOK
+          - PLN
+          - SEK
+          - SGD
+          - USD
+          type: string
+        id:
+          description: Unique identifier for the object.
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - balance_transaction
+          type: string
+        payment_id:
+          description: Unique identifier for the Payment object associated with the BalanceTransaction.
+          type: string
+      title: BalanceTransaction
+      type: object
+    error_object:
+      description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
+      properties:
+        errors:
+          description: An array of errors. Each element is a specific error.
+          maxItems: 1
+          minItems: 1
+          items:
+            properties:
+              code:
+                description: Enum value specific to the error. All Xflow error codes are defined [here](https://docs.xflowpay.com/latest/errors).
+                enum:
+                - account_activation_failed_missing_payout_address
+                - account_activation_failed_missing_person
+                - account_activation_failed_incorrect_number_of_persons
+                - account_activation_failed_incorrect_relationship_for_person
+                - account_email_invalid
+                - account_id_invalid
+                - account_not_unique_nickname
+                - account_parameter_not_editable
+                - account_partner_activate_disallowed
+                - account_partner_deactivate_disallowed
+                - account_platform_activate_disallowed
+                - account_platform_create_disallowed
+                - account_setting_parameter_not_editable
+                - account_status_invalid
+                - account_type_invalid
+                - account_update_access_unauthorized
+                - account_user_activate_disallowed
+                - account_user_create_disallowed
+                - action_invalid
+                - action_not_enabled
+                - action_unauthorized
+                - address_cannot_be_deactivated
+                - address_category_mismatch
+                - address_category_not_allowed
+                - address_domestic_credit_invalid
+                - address_global_wire_invalid
+                - address_global_wire_not_supported
+                - address_parameter_not_editable
+                - address_type_not_allowed
+                - balance_insufficient
+                - cancelled_request
+                - country_code_invalid
+                - country_code_not_supported
+                - currency_amount_mismatch
+                - currency_not_supported
+                - date_invalid_format
+                - deposit_account_address_mismatch
+                - deposit_account_id_mismatch
+                - deposit_parameter_not_editable
+                - duplicate_currencies_not_supported
+                - duplicate_values_found
+                - event_type_invalid
+                - fee_plan_parameter_not_editable
+                - file_name_invalid
+                - file_name_length_invalid
+                - file_parameter_not_editable
+                - file_purpose_mismatch
+                - file_size_limit_exceeded
+                - file_request_body_invalid
+                - file_type_unsupported
+                - header_parameter_invalid
+                - header_parameter_missing
+                - http_parameter_invalid
+                - invalid_amount
+                - invoice_date_invalid
+                - invoice_due_date_invalid
+                - metadata_count_exceeded
+                - metadata_key_max_length_invalid
+                - metadata_key_min_length_invalid
+                - metadata_value_max_length_invalid
+                - metadata_value_min_length_invalid
+                - multiple_xflow_receive_same_category_not_allowed
+                - minimum_required_values_not_present
+                - object_not_found
+                - parameter_address_invalid
+                - parameter_character_invalid
+                - parameter_empty
+                - parameter_file_invalid
+                - parameter_max_length_invalid
+                - parameter_min_length_invalid
+                - parameter_range_invalid
+                - parameter_receivable_invalid
+                - parameter_unexpected
+                - parameter_value_invalid
+                - payment_link_account_receivable_mismatch
+                - payment_link_activate_disallowed
+                - payment_link_deactivate_invalid
+                - payment_link_expire_invalid
+                - payment_link_extend_disallowed
+                - payment_link_extend_invalid
+                - payment_link_non_us_account_non_usd_currency
+                - payment_link_parameter_not_editable
+                - payment_link_receivable_count_exceed
+                - payment_link_receivable_status_invalid
+                - payout_parameter_not_editable
+                - person_delete_not_allowed
+                - person_parameter_not_editable
+                - person_relationship_not_set
+                - person_update_not_allowed
+                - purpose_code_not_supported
+                - receivable_additional_info_required
+                - receivable_amount_invoice_amount_mismatch
+                - receivable_amount_maximum_reconcilable_incorrect
+                - receivable_cancel_disallowed
+                - receivable_confirm_action_disallowed
+                - receivable_creation_date_invoice_creation_date_mismatch
+                - receivable_currency_invoice_currency_mismatch
+                - receivable_due_date_invoice_due_date_mismatch
+                - receivable_hold
+                - receivable_invoice_document_incorrect
+                - receivable_invoice_reference_number_exists
+                - receivable_invoice_transaction_type_incorrect
+                - receivable_parameter_not_editable
+                - receivable_partner_country_invoice_partner_country_mismatch
+                - receivable_partner_invoice_partner_mismatch
+                - receivable_reconcile_action_disallowed
+                - receivable_reconcile_amount_exceed
+                - receivable_reference_number_invoice_reference_number_mismatch
+                - receivable_unable_to_process
+                - receivable_update_access_unauthorized
+                - request_body_invalid
+                - request_query_parameter_invalid
+                - resource_locked
+                - secret_key_invalid
+                - secret_key_missing
+                - testmode_action_only
+                - timestamp_invalid
+                - transfer_failed
+                - transfer_parameter_not_editable
+                - transfer_type_invalid
+                - url_invalid
+                - webhook_endpoint_limit_exceeded
+                - webhook_endpoint_parameter_not_editable
+                - website_invalid
+                type: string
+              message:
+                description: Description of the error with guidance on how to recover.
+                type: string
+              metadata:
+                additionalProperties:
+                  type: string
+                description: Additional information associated with the error in the form of key-value pairs.
+                nullable: true
+                title: ErrorMetadata
+                type: object
+            title: ErrorObjectSingle
+            type: object
+          type: array
+        http_status_code:
+          description: HTTP status code.
+          type: integer
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - error
+          type: string
+      title: ErrorObject
+      type: object
+  securitySchemes:
+    bearerAuth:
+      bearerFormat: auth-scheme
+      description: 'Bearer HTTP authentication. Allowed headers-- Authorization: Bearer <api_key>'
+      scheme: bearer
+      type: http
