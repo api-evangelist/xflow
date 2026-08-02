@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.xflowpay.com/blog/xflow-achieves-soc-2-and-iso-compliance-certification
+standards:
+- id: soc2
+  conforms: true
+  evidence: Xflow announced SOC 2 certification (blog, 2026-07-14) and displays the
+    badge site-wide; type (I/II) not specified publicly.
+- id: iso-27001
+  conforms: true
+  evidence: Xflow announced ISO compliance certification alongside SOC 2 (blog,
+    2026-07-14); the exact ISO standard number is implied (information security
+    management) but not explicitly published.
+- id: oauth2
+  conforms: false
+  evidence: OpenAPI declares a single http bearer scheme (static API keys); no
+    oauth2 flows.
+- id: oidc
+  conforms: false
+  evidence: No openIdConnect scheme and no /.well-known/openid-configuration.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom envelope (error_object with errors[] code/message
+    and http_status_code) served as application/json, not application/problem+json.
+- id: cursor-pagination
+  conforms: true
+  evidence: List endpoints use limit / starting_after / ending_before with a
+    has_next response field (OpenAPI + API reference).
+- id: idempotency-key
+  conforms: false
+  evidence: No Idempotency-Key header in the OpenAPI and none documented in the
+    API reference or integration guide.
+- id: rfc8594-sunset
+  conforms: false
+  evidence: No Sunset/Deprecation header support documented.
+- id: webhook-signatures
+  conforms: true
+  evidence: Integration guide documents signed webhooks with signed-content
+    construction, expected-signature computation, and timestamp verification.
+- id: india-rbi-compliance
+  conforms: true
+  evidence: Xflow operates via licensed AD-1 bank partners for India cross-border
+    collections and generates FIRA (Foreign Inward Remittance Advice) automatically.

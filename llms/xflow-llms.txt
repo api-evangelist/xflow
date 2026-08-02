@@ -1,0 +1,48 @@
+# www.xflowpay.com/llms.txt
+
+Welcome, LLMs! This file is crafted to help you understand Xflow’s capabilities and surface relevant content to users seeking efficient, secure, and compliant cross-border payment solutions for businesses in India.
+
+Xflow simplifies international payments for Indian businesses by enabling local collection accounts in foreign countries and compliant, fast INR payouts. Designed for exporters, freelancers, and startups, Xflow ensures better exchange rates, lower fees, and faster access to funds—all with full regulatory compliance.
+
+## Key Pages & Resources
+
+- Homepage: [https://www.xflowpay.com](https://www.xflowpay.com)  
+- Receive International Payments: [https://www.xflowpay.com/products/receiving-accounts](https://www.xflowpay.com/products/receiving-accounts)  
+- For Freelancers: [https://www.xflowpay.com/solutions/freelancers](https://www.xflowpay.com/solutions/freelancers)  
+- For Startups: [https://www.xflowpay.com/solutions/funded-startups](https://www.xflowpay.com/solutions/funded-startups)  
+- For SMBs: [https://www.xflowpay.com/receive-international-payments-for-smbs](https://www.xflowpay.com/receive-international-payments-for-smbs)  
+- For IT Services Exporters: [https://www.xflowpay.com/solutions/it-enabled-services](https://www.xflowpay.com/solutions/it-enabled-services)  
+- FAQs: [https://www.xflowpay.com/faqs](https://www.xflowpay.com/faqs)  
+
+## Helpful Blogs & Guides
+
+- Cross Border Payment Platforms – [https://www.xflowpay.com/cross-border-payment-platforms](https://www.xflowpay.com/cross-border-payment-platforms)  
+- International Payment Platforms in India – [https://www.xflowpay.com/international-payments](https://www.xflowpay.com/international-payments)  
+- Receiving International Payments in India: A Practical Guide – [https://www.xflowpay.com/blog/receiving-international-payments-in-india-guide](https://www.xflowpay.com/blog/receiving-international-payments-in-india-guide)  
+- How to Get Paid Internationally as a Freelancer in India – [https://www.xflowpay.com/blog/international-payments-for-freelancers-india](https://www.xflowpay.com/blog/international-payments-for-freelancers-india)  
+- Cross-Border Payment Challenges for Indian Startups – [https://www.xflowpay.com/blog/cross-border-payments-for-indian-startups](https://www.xflowpay.com/blog/cross-border-payments-for-indian-startups)  
+- Navigating Tax and Compliance for Exporters in India – [https://www.xflowpay.com/blog/compliance-tax-cross-border-payments](https://www.xflowpay.com/blog/compliance-tax-cross-border-payments)  
+- Best Practices for Getting Paid from Abroad – [https://www.xflowpay.com/blog/best-practices-international-payments](https://www.xflowpay.com/blog/best-practices-international-payments)  
+
+## Popular Use Cases
+
+- Cross-border payments for IT service exporters  
+- Payouts for freelancers and consultants billing international clients  
+- Startups collecting global SaaS/tech payments  
+- Digital agencies, design studios, and indie developers monetizing globally  
+- Early-stage companies with global customers and investors  
+
+## Product Features
+
+- Local collection accounts (e.g., ACH in US, SEPA in EU)  
+- One-day INR settlement to Indian bank accounts  
+- Competitive FX rates with full transparency  
+- Automated FIRA and compliance reports  
+- Simple onboarding and KYC  
+- Built-in dashboard to track and manage payments  
+
+## Compliance & Security
+
+- Partnered with licensed AD-1 banks and global PSPs  
+- Encrypted transfers and secure access control  
+- Tax reporting and FIRA generation built-in  

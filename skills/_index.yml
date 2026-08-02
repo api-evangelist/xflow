@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/xflow-openapi-original.yml
+skills:
+- file: xflow-collect-cross-border-payment.md
+  name: Collect a cross-border payment with a Xflow receivable
+  api: openapi/xflow-openapi-original.yml
+  operations: [CreateAccount, ActivateAccount, CreateReceivable, ConfirmReceivable,
+    ListDeposits, ReconcileReceivable, ListPayouts]
+- file: xflow-payment-link.md
+  name: Invoice a buyer with a Xflow payment link
+  api: openapi/xflow-openapi-original.yml
+  operations: [CreateReceivable, ConfirmReceivable, CreatePaymentLink,
+    RetrievePaymentLink, ExtendPaymentLink, ExpirePaymentLink]
+- file: xflow-webhook-monitoring.md
+  name: Monitor Xflow money movement with webhooks
+  api: openapi/xflow-openapi-original.yml
+  operations: [CreateWebhookEndpoint, ActivateWebhookEndpoint, ListEvents,
+    RetrieveEvent, DeactivateWebhookEndpoint]

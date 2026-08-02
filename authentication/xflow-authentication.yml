@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/xflow-openapi-original.yml
+docs: https://docs.xflowpay.com/latest/api
+summary:
+  types:
+  - http
+  styles:
+  - bearer
+  - basic (API key as username, empty password)
+  key_prefixes:
+    test: sk_test_
+    live: sk_live_
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: auth-scheme
+  description: 'Bearer HTTP authentication. Allowed headers-- Authorization: Bearer <api_key>'
+  sources:
+  - openapi/xflow-openapi-original.yml
+notes: API keys are managed in the Xflow dashboard. Test keys are prefixed sk_test_
+  and live keys sk_live_; testmode and livemode data are fully separate. The docs
+  also allow supplying the API key as the HTTP Basic auth username with no
+  password. All requests must use HTTPS; plain HTTP calls fail. Platforms act on
+  behalf of connected users with the Xflow-Account header.

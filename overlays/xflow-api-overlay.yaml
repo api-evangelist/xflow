@@ -1,0 +1,44 @@
+# generated: 2026-07-21 | method: generated | source: openapi/xflow-openapi-original.yml
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Xflow API
+  version: 1.0.0
+extends: openapi/xflow-openapi-original.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      slug: xflow
+      profiled: '2026-07-21'
+      catalog: https://apis.io/providers/xflow/
+- target: $.info
+  update:
+    contact:
+      x-developer-portal: https://www.xflowpay.com/developers
+      x-postman-workspace: https://www.postman.com/xflow-pay/workspace/xflow-developers/overview
+- target: $.tags
+  update:
+  - name: Accounts
+    description: Merchant and connected-user accounts, activation, and settings.
+  - name: Addresses
+    description: Collection and payout addresses, including xflow_receive local collection accounts.
+  - name: Balances
+    description: Balance and balance transaction reporting.
+  - name: Deposits
+    description: Funds received into an account, including testmode deposit simulation.
+  - name: Receivables
+    description: Invoices to be collected cross-border, confirmed and reconciled against deposits.
+  - name: PaymentLinks
+    description: Hosted payment links tied to receivables.
+  - name: Payouts
+    description: INR settlement payouts to Indian bank accounts with UTR references.
+  - name: Transfers
+    description: Platform-initiated movements between accounts.
+  - name: Webhooks
+    description: Webhook endpoint management and event delivery.
+- target: $.components.securitySchemes.bearerAuth
+  update:
+    x-key-prefixes:
+      test: sk_test_
+      live: sk_live_
+    x-alternate-usage: The API key may also be supplied as the HTTP Basic auth username with an empty password.

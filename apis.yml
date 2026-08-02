@@ -1,22 +1,373 @@
 aid: xflow
 name: Xflow
-description: Xflow is a company surfaced as a portfolio company of general-catalyst and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Xflow is a cross-border payments platform for Indian businesses, freelancers,
+  and exporters, enabling them to receive international payments through local collection
+  accounts (ACH in the US, SEPA in the EU) with one-day INR settlement, transparent
+  FX at mid-market rates, and automated FIRA and compliance reporting. The Xflow REST
+  API exposes accounts, receivables, payment links, deposits, payouts, transfers,
+  balances, exchange rates, and webhook endpoints so platforms and payment aggregators
+  can embed compliant India-bound money movement.
 url: https://raw.githubusercontent.com/api-evangelist/xflow/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - general-catalyst
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.xflowpay.com/ogImage.png
 tags:
-- Company
-apis: []
+- Payments
+- Cross-Border Payments
+- Fintech
+- India
+- Foreign Exchange
+- Invoicing
+- Payouts
+apis:
+- aid: xflow:xflow-accounts-api
+  name: Xflow Accounts API
+  description: The Accounts API from Xflow — 4 operation(s) for accounts.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-accountsettings-api
+  name: Xflow AccountSettings API
+  description: The AccountSettings API from Xflow — 3 operation(s) for accountsettings.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - AccountSettings
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-accountsettings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-addresses-api
+  name: Xflow Addresses API
+  description: The Addresses API from Xflow — 2 operation(s) for addresses.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Addresses
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-addresses-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-balance-api
+  name: Xflow Balance API
+  description: The Balance API from Xflow — 2 operation(s) for balance.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Balance
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-balance-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-balancetransactions-api
+  name: Xflow BalanceTransactions API
+  description: The BalanceTransactions API from Xflow — 2 operation(s) for balancetransactions.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - BalanceTransactions
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-balancetransactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-deposits-api
+  name: Xflow Deposits API
+  description: The Deposits API from Xflow — 2 operation(s) for deposits.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Deposits
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-deposits-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-events-api
+  name: Xflow Events API
+  description: The Events API from Xflow — 2 operation(s) for events.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-events-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-exchangerates-api
+  name: Xflow ExchangeRates API
+  description: The ExchangeRates API from Xflow — 2 operation(s) for exchangerates.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - ExchangeRates
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-exchangerates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-feeplans-api
+  name: Xflow FeePlans API
+  description: The FeePlans API from Xflow — 2 operation(s) for feeplans.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - FeePlans
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-feeplans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-files-api
+  name: Xflow Files API
+  description: The Files API from Xflow — 3 operation(s) for files.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-files-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-paymentlinks-api
+  name: Xflow PaymentLinks API
+  description: The PaymentLinks API from Xflow — 6 operation(s) for paymentlinks.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - PaymentLinks
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-paymentlinks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-payments-api
+  name: Xflow Payments API
+  description: The Payments API from Xflow — 2 operation(s) for payments.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-payouts-api
+  name: Xflow Payouts API
+  description: The Payouts API from Xflow — 2 operation(s) for payouts.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Payouts
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-payouts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-persons-api
+  name: Xflow Persons API
+  description: The Persons API from Xflow — 2 operation(s) for persons.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Persons
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-persons-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-quotes-api
+  name: Xflow Quotes API
+  description: The Quotes API from Xflow — 1 operation(s) for quotes.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Quotes
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-quotes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-receivables-api
+  name: Xflow Receivables API
+  description: The Receivables API from Xflow — 5 operation(s) for receivables.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Receivables
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-receivables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-transfers-api
+  name: Xflow Transfers API
+  description: The Transfers API from Xflow — 2 operation(s) for transfers.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Transfers
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-transfers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-webhookendpoints-api
+  name: Xflow WebhookEndpoints API
+  description: The WebhookEndpoints API from Xflow — 4 operation(s) for webhookendpoints.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - WebhookEndpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-webhookendpoints-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+common:
+- type: Website
+  url: https://www.xflowpay.com
+- type: DeveloperPortal
+  url: https://www.xflowpay.com/developers
+- type: Documentation
+  url: https://docs.xflowpay.com/
+- type: APIReference
+  url: https://docs.xflowpay.com/latest/api
+- type: GettingStarted
+  url: https://docs.xflowpay.com/latest/guide
+- type: Support
+  url: https://www.xflowpay.com/faqs
+- type: Blog
+  url: https://www.xflowpay.com/blog
+- type: Pricing
+  url: https://www.xflowpay.com/pricing
+- type: SignUp
+  url: https://dashboard.xflowpay.com/login
+- type: Login
+  url: https://dashboard.xflowpay.com/login
+- type: Portal
+  url: https://dashboard.xflowpay.com
+- type: TermsOfService
+  url: https://docs.xflowpay.com/website-tou
+- type: PrivacyPolicy
+  url: https://docs.xflowpay.com/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/xflowpay
+- type: OpenAPI Source
+  url: https://github.com/xflowpay/openapi
+- type: PostmanWorkspace
+  url: https://www.postman.com/xflow-pay/workspace/xflow-developers/overview
+- type: Postman
+  url: https://www.postman.com/xflow-pay/workspace/xflow-developers/overview
+- type: ErrorCodes
+  url: https://docs.xflowpay.com/latest/errors
+- type: Webhooks
+  url: asyncapi/xflow-webhooks.yml
+- type: LLMsTxt
+  url: llms/xflow-llms.txt
+- type: Packages
+  url: packages/xflow-packages.yml
+- type: SDKs
+  url: packages/xflow-packages.yml
+- type: MCPServer
+  url: mcp/xflow-mcp.yml
+  name: Xflow MCP candidate manifest
+- type: Conformance
+  url: conformance/xflow-conformance.yml
+- type: Compliance
+  url: https://www.xflowpay.com/blog/xflow-achieves-soc-2-and-iso-compliance-certification
+- type: ErrorCatalog
+  url: errors/xflow-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/xflow-lifecycle.yml
+- type: Authentication
+  url: authentication/xflow-authentication.yml
+- type: DomainSecurity
+  url: security/xflow-domain-security.yml
+- type: Sandbox
+  url: sandbox/xflow-sandbox.yml
+- type: Conventions
+  url: conventions/xflow-conventions.yml
+- type: DataModel
+  url: data-model/xflow-data-model.yml
+- type: AgenticAccess
+  url: agentic-access/xflow-agentic-access.yml
+- type: AgentSkill
+  url: skills/_index.yml
+  name: Xflow Agent Skills
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

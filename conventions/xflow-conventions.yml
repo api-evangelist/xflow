@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.xflowpay.com/latest/api
+derived_from: openapi/xflow-openapi-original.yml
+authentication:
+  style: API key
+  schemes:
+  - Bearer token — `Authorization: Bearer sk_...`
+  - HTTP Basic — provide the API key as the basic auth username with no password
+  key_prefixes: {test: sk_test_, live: sk_live_}
+  https_required: true
+  cross_link: authentication/xflow-authentication.yml
+connected_accounts:
+  header: Xflow-Account
+  notes: Platform integrations act on behalf of connected users by passing the
+    connected account id in the Xflow-Account request header (Stripe-Connect-style
+    pattern, declared on operations throughout the OpenAPI).
+idempotency:
+  supported: false
+  notes: No Idempotency-Key header appears in the OpenAPI and none is documented
+    in the API reference or integration guide.
+pagination:
+  style: cursor
+  parameters:
+    limit: 1-10 objects per page, default 10
+    starting_after: object id — fetch the next page
+    ending_before: object id — fetch the previous page
+  response_fields:
+    data: array of objects
+    has_next: boolean indicating more results remain
+  filtering: List endpoints support field filters and timestamp range filters
+    (created.eq / created.gt / created.gte / created.lt / created.lte patterns).
+field_expansion:
+  supported: false
+  notes: No expand/sparse-field parameters documented.
+metadata:
+  supported: true
+  limits: Up to 10 key-value pairs per object; keys up to 40 characters, values up
+    to 500 characters. Do not store sensitive information (bank account numbers,
+    etc.) in metadata.
+  objects: Most core objects (accounts, addresses, deposits, fee plans, files,
+    payment links, payouts, receivables, transfers, webhook endpoints).
+request_tracing:
+  request_id_header: null
+  notes: No request-id header documented; settled payouts expose a
+    unique_transaction_reference (UTR) for bank-side tracing.
+versioning:
+  scheme: date-based (yyyy-mm-dd), current 2024-02-05
+  cross_link: lifecycle/xflow-lifecycle.yml
+error_envelope:
+  shape: '{ object: "error", http_status_code, errors: [ { code, message, ... } ] }'
+  content_type: application/json
+  cross_link: errors/xflow-problem-types.yml
+rate_limits:
+  documented: false
+  notes: No rate limits or rate-limit headers documented.
+livemode_flag:
+  notes: Every object carries a livemode boolean distinguishing test from live data.
+webhooks:
+  signatures: Signed webhooks — construct the signed content, compute the expected
+    signature, and verify the timestamp; retries, duplicate handling, source-IP
+    allowlisting, and HTTPS-only endpoints are documented.
+  cross_link: asyncapi/xflow-webhooks.yml

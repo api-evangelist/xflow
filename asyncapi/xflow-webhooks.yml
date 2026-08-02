@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.xflowpay.com/latest/guide#webhooks
+spec_type: Webhooks
+notes: Xflow publishes no AsyncAPI document; this captures the documented webhook
+  surface. Event types below are enumerated verbatim from the OpenAPI event schema
+  (event.properties.type enum); delivery semantics from the integration guide.
+delivery:
+  transport: HTTPS POST (HTTPS-only endpoints enforced)
+  management: webhook_endpoint objects via /v1/webhook_endpoints (create, update,
+    activate, deactivate; enabled_events subscription list; per-endpoint secret)
+  signatures: Signed payloads — construct the signed content, compute the expected
+    signature with the endpoint secret, verify the timestamp
+  retries: Automatic retry on delivery failure
+  duplicates: Duplicate event delivery possible; consumers must handle idempotently
+  source_ips: Documented allowlist of webhook source IP addresses
+events:
+- account.address.activated
+- account.payouts_enabled.updated
+- account.status.activated
+- account.status.hold
+- address.created
+- address.status.activated
+- address.status.deactivated
+- deposit.status.completed
+- payout.arrival_time.updated
+- payout.status.initialized
+- payout.status.processing
+- payout.status.settled
+- payout.status.failed
+- payout.payment_confirmation.updated
+- receivable.amount_reconciled.updated
+- receivable.amount_settled_payouts.updated
+- receivable.status.activated
+- receivable.status.cancelled
+- receivable.status.completed
+- receivable.status.hold
+- receivable.status.input_required
+- receivable.status.verifying
+linked_objects:
+- account
+- address
+- deposit
+- receivable
+- payout
+event_object: Events are retrievable via GET /v1/events and GET /v1/events/{event};
+  each event carries id, type, account_id, linked_id, linked_object, created,
+  livemode.

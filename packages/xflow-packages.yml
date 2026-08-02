@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=xflowpay
+notes: Xflow's docs list client libraries as "Coming Soon"; the @xflowpay npm scope
+  already ships an early first-party Node.js SDK (0.0.x). No packages found on PyPI,
+  Maven Central, NuGet, RubyGems, Packagist, or crates.io. The GitHub repo
+  xflowpay/xflow-node-sdk referenced by the package is not public.
+packages:
+- language: javascript
+  registry: npm
+  name: "@xflowpay/xflow-node-sdk"
+  url: https://www.npmjs.com/package/@xflowpay/xflow-node-sdk
+  install: npm install @xflowpay/xflow-node-sdk
+  description: Nodejs Client library for the XFlow API
+  latest: 0.0.7
+  repository: https://github.com/xflowpay/xflow-node-sdk
+  official: true

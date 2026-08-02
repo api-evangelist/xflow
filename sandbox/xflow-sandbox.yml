@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.xflowpay.com/latest/guide
+modes:
+  separation: Testmode and livemode are fully separate; data from testmode is not
+    carried over to livemode. Separate livemode keys must be generated for
+    production.
+  test_key_prefix: sk_test_
+  live_key_prefix: sk_live_
+  base_url: https://api.xflowpay.com (same host; mode selected by key)
+simulation:
+- feature: Account activation
+  behavior: Dummy data is accepted without verification; accounts activate
+    instantaneously in testmode.
+- feature: Partner activation
+  behavior: Partners activate immediately after creation.
+- feature: Deposits
+  behavior: Deposits can be simulated via API or dashboard to add funds to the
+    pending balance (testmode-only actions guarded by the testmode_action_only
+    error code).
+- feature: Receivables
+  behavior: Receivables auto-transition to active status upon confirmation.
+- feature: Payouts
+  behavior: Payouts auto-settle on simulated timing — immediately for daily
+    schedules, in 5 minutes for weekly, 15 minutes for monthly.
+- feature: Platform payouts / transfers
+  behavior: Transfer objects auto-complete with simulated timing.
+test_values:
+  notes: Xflow publishes no magic test card numbers or bank accounts; testmode
+    simulation is driven through the API/dashboard (e.g. simulated deposits)
+    rather than magic values.

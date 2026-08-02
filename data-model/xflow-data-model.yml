@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/xflow-openapi-original.yml
+notes: Entity graph derived from the 19 component schemas and their id-reference
+  fields. Xflow objects use string id references (account_id, payment_id,
+  linked_id) plus a polymorphic linked_object/linked_id pair rather than $ref
+  composition. All objects carry object (type discriminator) and livemode.
+entities:
+- account
+- account_setting
+- address
+- balance
+- balance_transaction
+- deposit
+- error_object
+- event
+- exchange_rate
+- fee_plan
+- file_object
+- payment
+- payment_link
+- payout
+- person
+- quote
+- receivable
+- transfer
+- webhook_endpoint
+relationships:
+- {from: account, to: address, kind: has_one, via: address}
+- {from: account, to: account, kind: belongs_to, via: parent_account_id}
+- {from: account, to: file_object, kind: has_one, via: logo_id}
+- {from: account, to: person, kind: has_many, via: persons (managed via /v1/persons)}
+- {from: account_setting, to: account, kind: belongs_to, via: (per-account settings)}
+- {from: address, to: account, kind: belongs_to, via: linked_id (linked_object=account)}
+- {from: balance, to: account, kind: belongs_to, via: account_id}
+- {from: balance_transaction, to: payment, kind: belongs_to, via: payment_id}
+- {from: deposit, to: address, kind: belongs_to, via: to (destination address)}
+- {from: event, to: account, kind: belongs_to, via: account_id}
+- {from: event, to: [account, address, deposit, receivable, payout], kind: belongs_to,
+   via: linked_id + linked_object enum}
+- {from: exchange_rate, to: payment, kind: belongs_to, via: payment_id}
+- {from: fee_plan, to: account, kind: belongs_to, via: linked_id (linked_object)}
+- {from: payment, to: fee_plan, kind: belongs_to, via: fee_plan_id}
+- {from: payment, to: payment, kind: has_many, via: linked_payments}
+- {from: payment_link, to: account, kind: belongs_to, via: account_id}
+- {from: payment_link, to: receivable, kind: has_many, via: receivable_ids}
+- {from: receivable, to: account, kind: belongs_to, via: account_id}
+- {from: receivable, to: deposit, kind: has_many, via: deposit_ids_amount_locked
+   (reconciliation locks deposits against receivables)}
+- {from: transfer, to: deposit, kind: belongs_to, via: linked_id (linked_object=deposit)}
+- {from: webhook_endpoint, to: event, kind: has_many, via: enabled_events}
+id_conventions:
+  object_field: Every object carries `object` naming its type and a string `id`.
+  polymorphic_reference: linked_object (enum of object types) + linked_id.

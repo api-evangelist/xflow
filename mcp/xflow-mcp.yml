@@ -1,0 +1,226 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/xflow-openapi-original.yml
+notes: No official Xflow MCP server was found (docs, npm, MCP registries). This is a candidate tool surface
+  derived one-tool-per-operation from the published OpenAPI.
+server:
+  name: xflow
+  transport: http
+  url: null
+tools:
+- name: list_accounts
+  description: Returns a list of accounts.
+  source_operation: openapi/xflow-openapi-original.yml#ListAccounts
+- name: create_account
+  description: Create an account.
+  source_operation: openapi/xflow-openapi-original.yml#CreateAccount
+- name: retrieve_account
+  description: Retrieves the details of an account.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveAccount
+- name: update_account
+  description: Update the details of an account.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateAccount
+- name: activate_account
+  description: Activates an account.
+  source_operation: openapi/xflow-openapi-original.yml#ActivateAccount
+- name: deactivate_account
+  description: Deactivates an account.
+  source_operation: openapi/xflow-openapi-original.yml#DeactivateAccount
+- name: list_account_settings
+  description: This endpoint returns all AccountSettings (filtered by the applied below query parameters)
+    associated with the platform, connected user or direct user in questi
+  source_operation: openapi/xflow-openapi-original.yml#ListAccountSettings
+- name: list_account_settings_connected
+  description: This endpoint returns all AccountSettings (filtered by the applied below query parameters)
+    associated with the connected users of a platform.
+  source_operation: openapi/xflow-openapi-original.yml#ListAccountSettingsConnected
+- name: retrieve_account_setting
+  description: Retrieves the details of an AccountSetting.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveAccountSetting
+- name: update_account_setting
+  description: Update the details of an AccountSetting.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateAccountSetting
+- name: list_addresses
+  description: Returns a list of addresses.
+  source_operation: openapi/xflow-openapi-original.yml#ListAddresses
+- name: create_address
+  description: Create an address.
+  source_operation: openapi/xflow-openapi-original.yml#CreateAddress
+- name: retrieve_address
+  description: Retrieves the details of an address.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveAddress
+- name: update_address
+  description: Update the details of an address.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateAddress
+- name: retrieve_balance
+  description: Retrieve a balance.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveBalance
+- name: retrieve_aggregate_balance
+  description: Retrieve an aggregate balance.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveAggregateBalance
+- name: list_balance_transactions
+  description: Returns a list of BalanceTransactions.
+  source_operation: openapi/xflow-openapi-original.yml#ListBalanceTransactions
+- name: retrieve_balance_transaction
+  description: Retrieves the details of a BalanceTransaction.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveBalanceTransaction
+- name: list_deposits
+  description: Returns a list of deposits.
+  source_operation: openapi/xflow-openapi-original.yml#ListDeposits
+- name: create_deposit
+  description: Create a deposit.
+  source_operation: openapi/xflow-openapi-original.yml#CreateDeposit
+- name: retrieve_deposit
+  description: Retrieves the details of a deposit.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveDeposit
+- name: update_deposit
+  description: Update the details of a deposit.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateDeposit
+- name: list_events
+  description: Returns a list of events.
+  source_operation: openapi/xflow-openapi-original.yml#ListEvents
+- name: retrieve_event
+  description: Retrieves the details of an event.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveEvent
+- name: list_exchange_rates
+  description: Returns a list of ExchangeRates.
+  source_operation: openapi/xflow-openapi-original.yml#ListExchangeRates
+- name: retrieve_exchange_rate
+  description: Retrieves the details of an ExchangeRate.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveExchangeRate
+- name: list_fee_plans
+  description: Returns a list of FeePlans.
+  source_operation: openapi/xflow-openapi-original.yml#ListFeePlans
+- name: create_fee_plan
+  description: Create a FeePlan.
+  source_operation: openapi/xflow-openapi-original.yml#CreateFeePlan
+- name: retrieve_fee_plan
+  description: Retrieves the details of an account.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveFeePlan
+- name: update_fee_plan
+  description: Update the details of a FeePlan.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateFeePlan
+- name: list_files
+  description: Returns a list of files.
+  source_operation: openapi/xflow-openapi-original.yml#ListFiles
+- name: create_file
+  description: Create a file.
+  source_operation: openapi/xflow-openapi-original.yml#CreateFile
+- name: retrieve_file
+  description: Retrieves the details of a file.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveFile
+- name: update_file
+  description: Update the details of a file.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateFile
+- name: download_file
+  description: Download a file.
+  source_operation: openapi/xflow-openapi-original.yml#DownloadFile
+- name: list_payment_links
+  description: Returns a list of PaymentLinks.
+  source_operation: openapi/xflow-openapi-original.yml#ListPaymentLinks
+- name: create_payment_link
+  description: Create a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#CreatePaymentLink
+- name: retrieve_payment_link
+  description: Retrieves the details of a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#RetrievePaymentLink
+- name: update_payment_link
+  description: Update the details of a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#UpdatePaymentLink
+- name: activate_payment_link
+  description: Activate a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#ActivatePaymentLink
+- name: deactivate_payment_link
+  description: Deactivate a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#DeactivatePaymentLink
+- name: expire_payment_link
+  description: Expire a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#ExpirePaymentLink
+- name: extend_payment_link
+  description: Extend a PaymentLink.
+  source_operation: openapi/xflow-openapi-original.yml#ExtendPaymentLink
+- name: list_payments
+  description: Returns a list of payments.
+  source_operation: openapi/xflow-openapi-original.yml#ListPayments
+- name: retrieve_payment
+  description: Retrieves the details of a payment.
+  source_operation: openapi/xflow-openapi-original.yml#RetrievePayment
+- name: list_payouts
+  description: Returns a list of payouts.
+  source_operation: openapi/xflow-openapi-original.yml#ListPayouts
+- name: retrieve_payout
+  description: Retrieves the details of a payout.
+  source_operation: openapi/xflow-openapi-original.yml#RetrievePayout
+- name: update_payout
+  description: Update the details of a payout.
+  source_operation: openapi/xflow-openapi-original.yml#UpdatePayout
+- name: list_persons
+  description: Returns a list of persons.
+  source_operation: openapi/xflow-openapi-original.yml#ListPersons
+- name: create_person
+  description: Create a person.
+  source_operation: openapi/xflow-openapi-original.yml#CreatePerson
+- name: retrieve_person
+  description: Retrieves the details of a person.
+  source_operation: openapi/xflow-openapi-original.yml#RetrievePerson
+- name: update_person
+  description: Update the details of a person.
+  source_operation: openapi/xflow-openapi-original.yml#UpdatePerson
+- name: delete_person
+  description: Delete a person.
+  source_operation: openapi/xflow-openapi-original.yml#DeletePerson
+- name: retrieve_quote
+  description: Retrieve a quote.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveQuote
+- name: list_receivables
+  description: Returns a list of receivables.
+  source_operation: openapi/xflow-openapi-original.yml#ListReceivables
+- name: create_receivable
+  description: Create a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#CreateReceivable
+- name: retrieve_receivable
+  description: Retrieves the details of a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveReceivable
+- name: update_receivable
+  description: Update the details of a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateReceivable
+- name: confirm_receivable
+  description: Confirm the details of a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#ConfirmReceivable
+- name: cancel_receivable
+  description: Cancel a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#CancelReceivable
+- name: reconcile_receivable
+  description: Reconcile a receivable.
+  source_operation: openapi/xflow-openapi-original.yml#ReconcileReceivable
+- name: list_transfers
+  description: Returns a list of transfers.
+  source_operation: openapi/xflow-openapi-original.yml#ListTransfers
+- name: create_transfer
+  description: Create a transfer.
+  source_operation: openapi/xflow-openapi-original.yml#CreateTransfer
+- name: retrieve_transfer
+  description: Retrieves the details of a transfer.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveTransfer
+- name: update_transfer
+  description: Update the details of a transfer.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateTransfer
+- name: list_webhook_endpoints
+  description: Returns a list of WebhookEndpoints.
+  source_operation: openapi/xflow-openapi-original.yml#ListWebhookEndpoints
+- name: create_webhook_endpoint
+  description: Create a WebhookEndpoint.
+  source_operation: openapi/xflow-openapi-original.yml#CreateWebhookEndpoint
+- name: retrieve_webhook_endpoint
+  description: Retrieves the details of a WebhookEndpoint.
+  source_operation: openapi/xflow-openapi-original.yml#RetrieveWebhookEndpoint
+- name: update_webhook_endpoint
+  description: Update the details of a WebhookEndpoint.
+  source_operation: openapi/xflow-openapi-original.yml#UpdateWebhookEndpoint
+- name: activate_webhook_endpoint
+  description: Activate the details of a WebhookEndpoint.
+  source_operation: openapi/xflow-openapi-original.yml#ActivateWebhookEndpoint
+- name: deactivate_webhook_endpoint
+  description: Deactivate a WebhookEndpoint.
+  source_operation: openapi/xflow-openapi-original.yml#DeactivateWebhookEndpoint

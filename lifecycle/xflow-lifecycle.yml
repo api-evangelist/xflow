@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.xflowpay.com/latest/guide
+versioning:
+  scheme: date-based
+  format: yyyy-mm-dd
+  current: '2024-02-05'
+  docs: https://docs.xflowpay.com/latest/api
+  notes: Xflow supports API versioning for breaking changes using yyyy-mm-dd version
+    monikers; integrators can stay on their current version until ready to upgrade.
+    Docs are published per-version (e.g. /2024-02-05/api) with a version dropdown;
+    the OpenAPI info.version is 2024-02-05.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation policy or RFC 8594 Sunset/Deprecation header support
+    documented.
+sla:
+  url: null
+  notes: No public SLA published.
+status_page: null
+status_page_notes: No status page found (status.xflowpay.com does not resolve; no
+  statuspage.io presence).
+changelog: null
+changelog_notes: No public dated changelog page found (docs paths /latest/changelog
+  and /latest/upgrades return 500).
+deprecated_operations: []

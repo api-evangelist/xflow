@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+notes: No /.well-known/ documents are published. www.xflowpay.com returns its SPA
+  catch-all HTML (HTTP 200, text/html) for every /.well-known/ path — recorded as
+  absent, not saved. api.xflowpay.com requires authentication (401) for all paths;
+  docs.xflowpay.com returns 500 for unknown paths.
+hosts:
+- host: https://www.xflowpay.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    valid: false
+    note: SPA catch-all HTML, not an RFC 9116 document
+  - path: /.well-known/openid-configuration
+    status: 200
+    valid: false
+    note: SPA catch-all HTML
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    valid: false
+    note: SPA catch-all HTML
+  - path: /.well-known/api-catalog
+    status: 200
+    valid: false
+    note: SPA catch-all HTML
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    valid: false
+    note: SPA catch-all HTML
+- host: https://api.xflowpay.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 401
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+- host: https://docs.xflowpay.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/openid-configuration
+    status: 500
+  - path: /.well-known/oauth-authorization-server
+    status: 500
+  - path: /.well-known/api-catalog
+    status: 500
+  - path: /.well-known/ai-plugin.json
+    status: 500
