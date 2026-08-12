@@ -291,6 +291,8 @@ apis:
   - type: APIReference
     url: https://docs.xflowpay.com/latest/api
 common:
+- type: Overlay
+  url: overlays/xflow-api-overlay.yaml
 - type: Website
   url: https://www.xflowpay.com
 - type: DeveloperPortal
