@@ -224,3 +224,9 @@ tools:
 - name: deactivate_webhook_endpoint
   description: Deactivate a WebhookEndpoint.
   source_operation: openapi/xflow-openapi-original.yml#DeactivateWebhookEndpoint
+deployment:
+  mode: none
+  verified: derived
+  tools: 71
+  checked: '2026-08-12'
+  source: catalog MCP census

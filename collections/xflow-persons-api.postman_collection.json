@@ -1,0 +1,1477 @@
+{
+  "item": [
+    {
+      "id": "074e112c-3e99-4519-8ade-27e87183547b",
+      "name": "Persons",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "49aa60f3-65f2-4b3b-a26b-8dc7a88c0749",
+          "name": "List Persons",
+          "request": {
+            "name": "List Persons",
+            "description": {
+              "content": "Returns a list of persons.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "relationship.director",
+                  "value": "<boolean>",
+                  "description": "`true` if the person is the director of the account entity, `false` otherwise."
+                },
+                {
+                  "disabled": false,
+                  "key": "relationship.owner",
+                  "value": "<boolean>",
+                  "description": "`true` if the person is the owner of the account entity, `false` otherwise."
+                },
+                {
+                  "disabled": false,
+                  "key": "relationship.representative",
+                  "value": "<boolean>",
+                  "description": "`true` if the person is the representative of the account entity, `false` otherwise."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status for persons."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status for persons."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30e82c68-4877-4ada-9369-865ff73848a9",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "relationship.director",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "relationship.owner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "relationship.representative",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"created\": 8296,\n      \"full_name\": \"string\",\n      \"id\": \"string\",\n      \"livemode\": false,\n      \"object\": \"person\",\n      \"relationship\": {\n        \"director\": true,\n        \"owner\": false,\n        \"representative\": true\n      },\n      \"status\": \"pending\",\n      \"supporting_documentation\": {\n        \"id_document\": \"string\"\n      },\n      \"supporting_ids\": {\n        \"tax\": \"string\"\n      }\n    },\n    {\n      \"created\": 7805,\n      \"full_name\": \"string\",\n      \"id\": \"string\",\n      \"livemode\": false,\n      \"object\": \"person\",\n      \"relationship\": {\n        \"director\": true,\n        \"owner\": false,\n        \"representative\": false\n      },\n      \"status\": \"pending\",\n      \"supporting_documentation\": {\n        \"id_document\": \"string\"\n      },\n      \"supporting_ids\": {\n        \"tax\": \"string\"\n      }\n    }\n  ],\n  \"has_next\": false,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c2a869d-b4b6-4838-adda-19e957fa3521",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "relationship.director",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "relationship.owner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "relationship.representative",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"transfer_parameter_not_editable\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 7739,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69921146-8201-4b1b-84d4-b5afa86342b2",
+          "name": "Create Person",
+          "request": {
+            "name": "Create Person",
+            "description": {
+              "content": "Create a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"full_name\": \"<string>\",\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c91dfd69-6655-4606-aa02-521eef7656be",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"full_name\": \"<string>\",\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": 5576,\n  \"full_name\": \"string\",\n  \"id\": \"string\",\n  \"livemode\": false,\n  \"object\": \"person\",\n  \"relationship\": {\n    \"director\": false,\n    \"owner\": true,\n    \"representative\": true\n  },\n  \"status\": \"verified\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7a5936e6-3425-459d-b5d1-e0dfb4d83bd2",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"full_name\": \"<string>\",\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"transfer_parameter_not_editable\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 7739,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6dab39f3-a0c3-4a58-9af3-518b6dee365e",
+          "name": "Retrieve Person",
+          "request": {
+            "name": "Retrieve Person",
+            "description": {
+              "content": "Retrieves the details of a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "persons",
+                ":person"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2e2204a-5fb5-4b6d-9bac-e5153d533e98",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": 5576,\n  \"full_name\": \"string\",\n  \"id\": \"string\",\n  \"livemode\": false,\n  \"object\": \"person\",\n  \"relationship\": {\n    \"director\": false,\n    \"owner\": true,\n    \"representative\": true\n  },\n  \"status\": \"verified\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad9feb82-4ceb-4329-a7e9-c54e0de296aa",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"transfer_parameter_not_editable\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 7739,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef3e9afc-d849-4583-bbb6-0a0b4b6fd0c1",
+          "name": "Update Person",
+          "request": {
+            "name": "Update Person",
+            "description": {
+              "content": "Update the details of a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "persons",
+                ":person"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"<string>\",\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "06d31e55-62c1-40a6-bb48-307fe5ff040c",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"<string>\",\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": 5576,\n  \"full_name\": \"string\",\n  \"id\": \"string\",\n  \"livemode\": false,\n  \"object\": \"person\",\n  \"relationship\": {\n    \"director\": false,\n    \"owner\": true,\n    \"representative\": true\n  },\n  \"status\": \"verified\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "099b6bd2-4683-4b8a-a76e-30959dde89a3",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"full_name\": \"<string>\",\n  \"relationship\": {\n    \"director\": \"<boolean>\",\n    \"owner\": \"<boolean>\",\n    \"representative\": \"<boolean>\"\n  },\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"transfer_parameter_not_editable\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 7739,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "766d5ff1-cd98-42f9-bc2b-4af3824bbf22",
+          "name": "Delete Person",
+          "request": {
+            "name": "Delete Person",
+            "description": {
+              "content": "Delete a person.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "persons",
+                ":person"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "person",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02e7289d-c3fc-417e-a3be-c803543509f1",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": 5576,\n  \"full_name\": \"string\",\n  \"id\": \"string\",\n  \"livemode\": false,\n  \"object\": \"person\",\n  \"relationship\": {\n    \"director\": false,\n    \"owner\": true,\n    \"representative\": true\n  },\n  \"status\": \"verified\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"supporting_ids\": {\n    \"tax\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f843eea3-4f8c-4119-b89a-b901b549a59b",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "persons",
+                    ":person"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "person",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7402",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"transfer_parameter_not_editable\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 7739,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f0e73e8f-86eb-4808-acd3-b00542de14a8",
+    "name": "Xflow Accounts Persons API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

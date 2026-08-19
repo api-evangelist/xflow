@@ -1,0 +1,705 @@
+{
+  "item": [
+    {
+      "id": "6f3bc35e-98a9-4a7d-b148-8874ba739e47",
+      "name": "ExchangeRates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4f7c9974-a7b5-4bc0-8aac-0a3ede071a5c",
+          "name": "List Exchange Rates",
+          "request": {
+            "name": "List Exchange Rates",
+            "description": {
+              "content": "Returns a list of ExchangeRates.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "exchange_rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "buy.currency",
+                  "value": "<string>",
+                  "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the buy amount currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency_pair",
+                  "value": "<string>",
+                  "description": "The currency pair associated with buy and sell currencies."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "payment_id",
+                  "value": "<string>",
+                  "description": "Unique identifier for the payment object associated with the ExchangeRate."
+                },
+                {
+                  "disabled": false,
+                  "key": "payment_id",
+                  "value": "<string>",
+                  "description": "Unique identifier for the payment object associated with the ExchangeRate."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "sell.currency",
+                  "value": "<string>",
+                  "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the sell amount currency."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ee5d453-7f33-40bc-aa17-86c5d07bed15",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "exchange_rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "buy.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "currency_pair",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payment_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payment_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "3638",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"buy\": {\n        \"amount\": \"string\",\n        \"currency\": \"INR\"\n      },\n      \"created\": 9608,\n      \"currency_pair\": \"string\",\n      \"dealt_currency\": \"string\",\n      \"id\": \"string\",\n      \"livemode\": false,\n      \"object\": \"exchange_rate\",\n      \"payment_id\": \"string\",\n      \"rate\": {\n        \"mid_market\": \"string\",\n        \"user\": \"string\",\n        \"valid_from\": 4499,\n        \"valid_to\": 1822\n      },\n      \"sell\": {\n        \"amount\": \"string\",\n        \"currency\": \"string\"\n      },\n      \"type\": \"stp\"\n    },\n    {\n      \"buy\": {\n        \"amount\": \"string\",\n        \"currency\": \"INR\"\n      },\n      \"created\": 7021,\n      \"currency_pair\": \"string\",\n      \"dealt_currency\": \"string\",\n      \"id\": \"string\",\n      \"livemode\": false,\n      \"object\": \"exchange_rate\",\n      \"payment_id\": \"string\",\n      \"rate\": {\n        \"mid_market\": \"string\",\n        \"user\": \"string\",\n        \"valid_from\": 7182,\n        \"valid_to\": 1326\n      },\n      \"sell\": {\n        \"amount\": \"string\",\n        \"currency\": \"string\"\n      },\n      \"type\": \"lock\"\n    }\n  ],\n  \"has_next\": false,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63d28bf3-105a-4bf5-bba8-771d76764415",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "exchange_rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "buy.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "currency_pair",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payment_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payment_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.currency",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "3638",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_reconcile_action_disallowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 3961,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50ecd210-69fe-4642-8924-83e1156fc809",
+          "name": "Retrieve Exchange Rate",
+          "request": {
+            "name": "Retrieve Exchange Rate",
+            "description": {
+              "content": "Retrieves the details of an ExchangeRate.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "exchange_rates",
+                ":exchange_rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "exchange_rate",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2313f0d1-4287-4393-b503-0b0ffc16ba7d",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "exchange_rates",
+                    ":exchange_rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "exchange_rate",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "3638",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"buy\": {\n    \"amount\": \"string\",\n    \"currency\": \"INR\"\n  },\n  \"created\": 7978,\n  \"currency_pair\": \"string\",\n  \"dealt_currency\": \"string\",\n  \"id\": \"string\",\n  \"livemode\": false,\n  \"object\": \"exchange_rate\",\n  \"payment_id\": \"string\",\n  \"rate\": {\n    \"mid_market\": \"string\",\n    \"user\": \"string\",\n    \"valid_from\": 3942,\n    \"valid_to\": 316\n  },\n  \"sell\": {\n    \"amount\": \"string\",\n    \"currency\": \"string\"\n  },\n  \"type\": \"stp\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8f0018d-d0de-495d-a642-d7e985b65f0c",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "exchange_rates",
+                    ":exchange_rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "exchange_rate",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "3638",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_reconcile_action_disallowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 3961,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5bf10d89-880f-4fd5-8372-db9013a10930",
+    "name": "Xflow Accounts ExchangeRates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "item": [
+    {
+      "id": "a786fc54-29f4-4cff-97a7-823537a27343",
+      "name": "Balance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be92995b-2a7d-47c9-b6c1-e94b8333b5ba",
+          "name": "Retrieve Balance",
+          "request": {
+            "name": "Retrieve Balance",
+            "description": {
+              "content": "Retrieve a balance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "Unique identifier for the account object for which this balance is associated. If this is not specified, then the balance object will be returned for the context that the user is in."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80e643a5-4c6e-4044-a160-2eadaf66e0da",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7333",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"available\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"INR\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"PLN\"\n    }\n  ],\n  \"fee_advance\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"DKK\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"NOK\"\n    }\n  ],\n  \"livemode\": true,\n  \"object\": \"balance\",\n  \"payout_processing\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"CHF\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"PLN\"\n    }\n  ],\n  \"pending\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"GBP\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"EUR\"\n    }\n  ],\n  \"processing\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"CZK\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"CZK\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3d07938d-82df-4a51-9e52-d4ab74c97308",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7333",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"address_cannot_be_deactivated\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 914,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a7d1c31-6090-472e-8560-3b8c7b8546cb",
+          "name": "Retrieve Aggregate Balance",
+          "request": {
+            "name": "Retrieve Aggregate Balance",
+            "description": {
+              "content": "Retrieve an aggregate balance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "balance",
+                "aggregate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "Unique identifier for the account object for which this balance is associated. If this is not specified, then the balance object will be returned for the context that the user is in."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14ad0a6b-e498-4270-844b-624911ce803a",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balance",
+                    "aggregate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7333",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"available\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"INR\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"HKD\"\n    }\n  ],\n  \"fee_advance\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"NOK\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"NOK\"\n    }\n  ],\n  \"livemode\": false,\n  \"object\": \"balance\",\n  \"payout_processing\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"AUD\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"NOK\"\n    }\n  ],\n  \"pending\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"GBP\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"CZK\"\n    }\n  ],\n  \"processing\": [\n    {\n      \"amount\": \"string\",\n      \"currency\": \"AUD\"\n    },\n    {\n      \"amount\": \"string\",\n      \"currency\": \"CHF\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3498d162-4f78-4e95-af4f-b7aa254bbc00",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balance",
+                    "aggregate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7333",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"address_cannot_be_deactivated\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 914,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "62133bdb-8a88-4a77-ae34-a090a78c60a0",
+    "name": "Xflow Accounts Balance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

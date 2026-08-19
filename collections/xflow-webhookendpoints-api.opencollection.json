@@ -1,0 +1,212 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts WebhookEndpoints API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WebhookEndpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListWebhookEndpoints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "platform",
+                "value": "",
+                "type": "query",
+                "description": "If `true`, the response will contain webhook endpoints for platforms. Else if `false`, the response will contain webhook endpoints for direct users or connected users."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Valid status for WebhookEndpoints."
+              }
+            ]
+          },
+          "docs": "Returns a list of WebhookEndpoints."
+        },
+        {
+          "info": {
+            "name": "CreateWebhookEndpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a WebhookEndpoint."
+        },
+        {
+          "info": {
+            "name": "RetrieveWebhookEndpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints/:webhook_endpoint",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "webhook_endpoint",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a WebhookEndpoint."
+        },
+        {
+          "info": {
+            "name": "UpdateWebhookEndpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints/:webhook_endpoint",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "webhook_endpoint",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the details of a WebhookEndpoint."
+        },
+        {
+          "info": {
+            "name": "ActivateWebhookEndpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints/:webhook_endpoint/activate",
+            "params": [
+              {
+                "name": "webhook_endpoint",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Activate the details of a WebhookEndpoint."
+        },
+        {
+          "info": {
+            "name": "DeactivateWebhookEndpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/webhook_endpoints/:webhook_endpoint/deactivate",
+            "params": [
+              {
+                "name": "webhook_endpoint",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deactivate a WebhookEndpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

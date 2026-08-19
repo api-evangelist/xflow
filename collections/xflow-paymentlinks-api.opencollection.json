@@ -1,0 +1,314 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts PaymentLinks API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PaymentLinks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListPaymentLinks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/payment_links",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier for the account object associated with the PaymentLink."
+              },
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "expires_at.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `expires_at` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time). Objects returned as part of this list query are sorted in ascending order based on the `expires_at` parameter."
+              },
+              {
+                "name": "expires_at.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `expires_at` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "expires_at.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `expires_at` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "expires_at.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `expires_at` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "expires_at.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `expires_at` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "receiveble_ids",
+                "value": "",
+                "type": "query",
+                "description": "Array of unique identifiers of the receivable objects associated with the PaymentLink. Currently you can have only one receivable associated with a PaymentLink object."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Valid status associated with PaymentLinks."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of PaymentLink object used for accepting payments against a receivable object."
+              }
+            ]
+          },
+          "docs": "Returns a list of PaymentLinks."
+        },
+        {
+          "info": {
+            "name": "CreatePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "RetrievePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "UpdatePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the details of a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "ActivatePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link/activate",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Activate a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "DeactivatePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link/deactivate",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deactivate a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "ExpirePaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link/expire",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Expire a PaymentLink."
+        },
+        {
+          "info": {
+            "name": "ExtendPaymentLink",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/payment_links/:payment_link/extend",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "payment_link",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Extend a PaymentLink."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

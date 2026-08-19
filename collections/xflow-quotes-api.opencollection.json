@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts Quotes API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quotes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RetrieveQuote",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/quotes",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "buy.amount",
+                "value": "",
+                "type": "query",
+                "description": "Buy amount value."
+              },
+              {
+                "name": "buy.currency",
+                "value": "",
+                "type": "query",
+                "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the buy currency."
+              },
+              {
+                "name": "sell.amount",
+                "value": "",
+                "type": "query",
+                "description": "Sell amount value."
+              },
+              {
+                "name": "sell.currency",
+                "value": "",
+                "type": "query",
+                "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the sell currency."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Valid quote types."
+              }
+            ]
+          },
+          "docs": "Retrieve a quote."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

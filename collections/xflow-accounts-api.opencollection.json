@@ -1,0 +1,230 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListAccounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/accounts",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "This parameter represents the state of the `xflow_receive` addresses associated with this account. The valid values include `deactivated`, `requested`, `processing` and `activated`."
+              },
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Valid status types associated with an Xflow account."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Account types. These can be `partner`, `platform` or `user`."
+              }
+            ]
+          },
+          "docs": "Returns a list of accounts."
+        },
+        {
+          "info": {
+            "name": "CreateAccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/accounts",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an account."
+        },
+        {
+          "info": {
+            "name": "RetrieveAccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/accounts/:account",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the details of an account."
+        },
+        {
+          "info": {
+            "name": "UpdateAccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/accounts/:account",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the details of an account."
+        },
+        {
+          "info": {
+            "name": "ActivateAccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/accounts/:account/activate",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Activates an account."
+        },
+        {
+          "info": {
+            "name": "DeactivateAccount",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/accounts/:account/deactivate",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deactivates an account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

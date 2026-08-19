@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts Persons API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Persons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListPersons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/persons",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "relationship.director",
+                "value": "",
+                "type": "query",
+                "description": "`true` if the person is the director of the account entity, `false` otherwise."
+              },
+              {
+                "name": "relationship.owner",
+                "value": "",
+                "type": "query",
+                "description": "`true` if the person is the owner of the account entity, `false` otherwise."
+              },
+              {
+                "name": "relationship.representative",
+                "value": "",
+                "type": "query",
+                "description": "`true` if the person is the representative of the account entity, `false` otherwise."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Valid status for persons."
+              }
+            ]
+          },
+          "docs": "Returns a list of persons."
+        },
+        {
+          "info": {
+            "name": "CreatePerson",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/persons",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a person."
+        },
+        {
+          "info": {
+            "name": "RetrievePerson",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/persons/:person",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "person",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the details of a person."
+        },
+        {
+          "info": {
+            "name": "UpdatePerson",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/persons/:person",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "person",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the details of a person."
+        },
+        {
+          "info": {
+            "name": "DeletePerson",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.xflowpay.com/v1/persons/:person",
+            "params": [
+              {
+                "name": "person",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a person."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

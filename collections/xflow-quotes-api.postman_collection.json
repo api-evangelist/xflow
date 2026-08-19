@@ -1,0 +1,340 @@
+{
+  "item": [
+    {
+      "id": "1e4e03b5-75a5-4db5-9377-6b7188eaa760",
+      "name": "Quotes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47b6fac1-7607-4fc9-aae8-f4de7f1686be",
+          "name": "Retrieve Quote",
+          "request": {
+            "name": "Retrieve Quote",
+            "description": {
+              "content": "Retrieve a quote.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "quotes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "buy.amount",
+                  "value": "<string>",
+                  "description": "Buy amount value."
+                },
+                {
+                  "disabled": false,
+                  "key": "buy.currency",
+                  "value": "<string>",
+                  "description": "(Required) The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the buy currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "sell.amount",
+                  "value": "<string>",
+                  "description": "Sell amount value."
+                },
+                {
+                  "disabled": false,
+                  "key": "sell.currency",
+                  "value": "<string>",
+                  "description": "(Required) The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the sell currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) Valid quote types."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8525b8f6-c66a-48e5-831f-ef7d2c8276f4",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "buy.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "buy.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7537",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"buy\": {\n    \"amount\": \"string\",\n    \"currency\": \"INR\"\n  },\n  \"currency_pair\": \"string\",\n  \"dealt_currency\": \"string\",\n  \"livemode\": true,\n  \"object\": \"quote\",\n  \"rate\": {\n    \"mid_market\": \"string\",\n    \"user\": \"string\"\n  },\n  \"sell\": {\n    \"amount\": \"string\",\n    \"currency\": \"string\"\n  },\n  \"type\": \"payout_fx\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "faf44f0f-b402-4ae6-9cac-86c21baabbb5",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "quotes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "buy.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "buy.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.amount",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sell.currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "7537",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"deposit_account_id_mismatch\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5780,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "15d65e45-ca05-4e41-a660-5019505b557c",
+    "name": "Xflow Accounts Quotes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

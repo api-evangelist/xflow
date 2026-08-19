@@ -1,0 +1,1754 @@
+{
+  "item": [
+    {
+      "id": "45c8e701-79fe-444a-826a-596c304de200",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f13bb76a-7422-433b-9d5c-0edda845e700",
+          "name": "List Accounts",
+          "request": {
+            "name": "List Accounts",
+            "description": {
+              "content": "Returns a list of accounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "This parameter represents the state of the `xflow_receive` addresses associated with this account. The valid values include `deactivated`, `requested`, `processing` and `activated`."
+                },
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "This parameter represents the state of the `xflow_receive` addresses associated with this account. The valid values include `deactivated`, `requested`, `processing` and `activated`."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status types associated with an Xflow account."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status types associated with an Xflow account."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Account types. These can be `partner`, `platform` or `user`."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e617997c-fcd6-4927-9151-b32acee7e85a",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"address\": \"activated\",\n      \"business_details\": {\n        \"date_of_incorporation\": \"string\",\n        \"dba\": \"string\",\n        \"email\": \"erXF41g@DIRKPHy.co\",\n        \"ids\": {\n          \"business\": \"string\",\n          \"tax\": \"string\",\n          \"tax_deduction\": \"string\",\n          \"tax_gst\": \"string\",\n          \"tax_trade\": \"string\"\n        },\n        \"legal_name\": \"string\",\n        \"merchant_category_code\": \"string\",\n        \"merchant_size\": \"large\",\n        \"physical_address\": {\n          \"city\": \"string\",\n          \"country\": \"PG\",\n          \"line1\": \"string\",\n          \"line2\": \"string\",\n          \"postal_code\": \"string\",\n          \"state\": \"string\"\n        },\n        \"product_category\": \"service\",\n        \"product_description\": \"string\",\n        \"type\": \"individual\",\n        \"website\": \"string\"\n      },\n      \"created\": 3465,\n      \"id\": \"string\",\n      \"link\": \"string\",\n      \"livemode\": false,\n      \"logo_id\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\",\n        \"key_4\": \"string\"\n      },\n      \"nickname\": \"string\",\n      \"object\": \"account\",\n      \"parent_account_id\": \"string\",\n      \"sub_type\": \"aggregator\",\n      \"supporting_documentation\": {\n        \"id_document\": \"string\"\n      },\n      \"status\": \"verifying\",\n      \"tos_acceptance\": {\n        \"ip\": \"string\",\n        \"time\": 8741,\n        \"user_agent\": \"string\"\n      },\n      \"type\": \"user\"\n    },\n    {\n      \"address\": \"requested\",\n      \"business_details\": {\n        \"date_of_incorporation\": \"string\",\n        \"dba\": \"string\",\n        \"email\": \"i0N-EmCOkF3ucf@cilBKrMgl.wtjr\",\n        \"ids\": {\n          \"business\": \"string\",\n          \"tax\": \"string\",\n          \"tax_deduction\": \"string\",\n          \"tax_gst\": \"string\",\n          \"tax_trade\": \"string\"\n        },\n        \"legal_name\": \"string\",\n        \"merchant_category_code\": \"string\",\n        \"merchant_size\": \"large\",\n        \"physical_address\": {\n          \"city\": \"string\",\n          \"country\": \"SI\",\n          \"line1\": \"string\",\n          \"line2\": \"string\",\n          \"postal_code\": \"string\",\n          \"state\": \"string\"\n        },\n        \"product_category\": \"goods\",\n        \"product_description\": \"string\",\n        \"type\": \"sole_proprietor\",\n        \"website\": \"string\"\n      },\n      \"created\": 577,\n      \"id\": \"string\",\n      \"link\": \"string\",\n      \"livemode\": true,\n      \"logo_id\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"nickname\": \"string\",\n      \"object\": \"account\",\n      \"parent_account_id\": \"string\",\n      \"sub_type\": \"aggregator\",\n      \"supporting_documentation\": {\n        \"id_document\": \"string\"\n      },\n      \"status\": \"verifying\",\n      \"tos_acceptance\": {\n        \"ip\": \"string\",\n        \"time\": 7852,\n        \"user_agent\": \"string\"\n      },\n      \"type\": \"partner\"\n    }\n  ],\n  \"has_next\": true,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c42d6b0-85f0-4ffe-9eb2-03ae037a9914",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b08dc9d-c1b9-41a5-9dae-af0292b432c3",
+          "name": "Create Account",
+          "request": {
+            "name": "Create Account",
+            "description": {
+              "content": "Create an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"business_details\": {\n    \"email\": \"<email>\",\n    \"legal_name\": \"<string>\",\n    \"physical_address\": {\n      \"country\": \"<string>\",\n      \"city\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"type\": \"<string>\",\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"type\": \"<string>\",\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d45ac61a-e1b5-4807-932e-4736b7348f55",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_details\": {\n    \"email\": \"<email>\",\n    \"legal_name\": \"<string>\",\n    \"physical_address\": {\n      \"country\": \"<string>\",\n      \"city\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"type\": \"<string>\",\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"type\": \"<string>\",\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"activated\",\n  \"business_details\": {\n    \"date_of_incorporation\": \"string\",\n    \"dba\": \"string\",\n    \"email\": \"DZq7J9h9@oMhrPmmgalMsQQkXmtcKHtOEOjHnnMlp.fcw\",\n    \"ids\": {\n      \"business\": \"string\",\n      \"tax\": \"string\",\n      \"tax_deduction\": \"string\",\n      \"tax_gst\": \"string\",\n      \"tax_trade\": \"string\"\n    },\n    \"legal_name\": \"string\",\n    \"merchant_category_code\": \"string\",\n    \"merchant_size\": \"small\",\n    \"physical_address\": {\n      \"city\": \"string\",\n      \"country\": \"CL\",\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"product_category\": \"software\",\n    \"product_description\": \"string\",\n    \"type\": \"company\",\n    \"website\": \"string\"\n  },\n  \"created\": 6393,\n  \"id\": \"string\",\n  \"link\": \"string\",\n  \"livemode\": false,\n  \"logo_id\": \"string\",\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"nickname\": \"string\",\n  \"object\": \"account\",\n  \"parent_account_id\": \"string\",\n  \"sub_type\": \"referrer\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"status\": \"deactivated\",\n  \"tos_acceptance\": {\n    \"ip\": \"string\",\n    \"time\": 6731,\n    \"user_agent\": \"string\"\n  },\n  \"type\": \"user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "191f148d-3949-4076-8234-e251b1796a38",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_details\": {\n    \"email\": \"<email>\",\n    \"legal_name\": \"<string>\",\n    \"physical_address\": {\n      \"country\": \"<string>\",\n      \"city\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"type\": \"<string>\",\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"type\": \"<string>\",\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d583f51-c872-4c11-a3cd-0b5573d4ef5e",
+          "name": "Retrieve Account",
+          "request": {
+            "name": "Retrieve Account",
+            "description": {
+              "content": "Retrieves the details of an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                ":account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92cf32be-0f9c-43a2-b692-6f96f8f1bb4c",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"activated\",\n  \"business_details\": {\n    \"date_of_incorporation\": \"string\",\n    \"dba\": \"string\",\n    \"email\": \"DZq7J9h9@oMhrPmmgalMsQQkXmtcKHtOEOjHnnMlp.fcw\",\n    \"ids\": {\n      \"business\": \"string\",\n      \"tax\": \"string\",\n      \"tax_deduction\": \"string\",\n      \"tax_gst\": \"string\",\n      \"tax_trade\": \"string\"\n    },\n    \"legal_name\": \"string\",\n    \"merchant_category_code\": \"string\",\n    \"merchant_size\": \"small\",\n    \"physical_address\": {\n      \"city\": \"string\",\n      \"country\": \"CL\",\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"product_category\": \"software\",\n    \"product_description\": \"string\",\n    \"type\": \"company\",\n    \"website\": \"string\"\n  },\n  \"created\": 6393,\n  \"id\": \"string\",\n  \"link\": \"string\",\n  \"livemode\": false,\n  \"logo_id\": \"string\",\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"nickname\": \"string\",\n  \"object\": \"account\",\n  \"parent_account_id\": \"string\",\n  \"sub_type\": \"referrer\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"status\": \"deactivated\",\n  \"tos_acceptance\": {\n    \"ip\": \"string\",\n    \"time\": 6731,\n    \"user_agent\": \"string\"\n  },\n  \"type\": \"user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "10896e5f-e366-4e68-8e6a-ec4d8c70ccfa",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e98477ec-066f-4fa7-9fae-748e78b37956",
+          "name": "Update Account",
+          "request": {
+            "name": "Update Account",
+            "description": {
+              "content": "Update the details of an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                ":account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"business_details\": {\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"email\": \"<email>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"legal_name\": \"<string>\",\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"physical_address\": {\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"type\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "012a6ba8-eba1-4bfb-a64d-610c8a467ab3",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_details\": {\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"email\": \"<email>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"legal_name\": \"<string>\",\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"physical_address\": {\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"type\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"activated\",\n  \"business_details\": {\n    \"date_of_incorporation\": \"string\",\n    \"dba\": \"string\",\n    \"email\": \"DZq7J9h9@oMhrPmmgalMsQQkXmtcKHtOEOjHnnMlp.fcw\",\n    \"ids\": {\n      \"business\": \"string\",\n      \"tax\": \"string\",\n      \"tax_deduction\": \"string\",\n      \"tax_gst\": \"string\",\n      \"tax_trade\": \"string\"\n    },\n    \"legal_name\": \"string\",\n    \"merchant_category_code\": \"string\",\n    \"merchant_size\": \"small\",\n    \"physical_address\": {\n      \"city\": \"string\",\n      \"country\": \"CL\",\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"product_category\": \"software\",\n    \"product_description\": \"string\",\n    \"type\": \"company\",\n    \"website\": \"string\"\n  },\n  \"created\": 6393,\n  \"id\": \"string\",\n  \"link\": \"string\",\n  \"livemode\": false,\n  \"logo_id\": \"string\",\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"nickname\": \"string\",\n  \"object\": \"account\",\n  \"parent_account_id\": \"string\",\n  \"sub_type\": \"referrer\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"status\": \"deactivated\",\n  \"tos_acceptance\": {\n    \"ip\": \"string\",\n    \"time\": 6731,\n    \"user_agent\": \"string\"\n  },\n  \"type\": \"user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0e33cd09-3f3a-46e9-a491-c102b7b886a7",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"business_details\": {\n    \"date_of_incorporation\": \"<string>\",\n    \"dba\": \"<string>\",\n    \"email\": \"<email>\",\n    \"ids\": {\n      \"business\": \"<string>\",\n      \"tax\": \"<string>\",\n      \"tax_deduction\": \"<string>\",\n      \"tax_gst\": \"<string>\",\n      \"tax_trade\": \"<string>\"\n    },\n    \"legal_name\": \"<string>\",\n    \"merchant_category_code\": \"<string>\",\n    \"merchant_size\": \"<string>\",\n    \"physical_address\": {\n      \"city\": \"<string>\",\n      \"country\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"postal_code\": \"<string>\",\n      \"state\": \"<string>\"\n    },\n    \"product_category\": \"<string>\",\n    \"product_description\": \"<string>\",\n    \"type\": \"<string>\",\n    \"website\": \"<string>\"\n  },\n  \"logo_id\": \"<string>\",\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"nickname\": \"<string>\",\n  \"supporting_documentation\": {\n    \"id_document\": \"<string>\"\n  },\n  \"tos_acceptance\": {\n    \"ip\": \"<string>\",\n    \"time\": \"<unix-time>\",\n    \"user_agent\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aa291553-0cea-45be-b033-e37298d87531",
+          "name": "Activate Account",
+          "request": {
+            "name": "Activate Account",
+            "description": {
+              "content": "Activates an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                ":account",
+                "activate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2bdd48f6-9c09-4ad1-84ce-40766adb1de3",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account",
+                    "activate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"activated\",\n  \"business_details\": {\n    \"date_of_incorporation\": \"string\",\n    \"dba\": \"string\",\n    \"email\": \"DZq7J9h9@oMhrPmmgalMsQQkXmtcKHtOEOjHnnMlp.fcw\",\n    \"ids\": {\n      \"business\": \"string\",\n      \"tax\": \"string\",\n      \"tax_deduction\": \"string\",\n      \"tax_gst\": \"string\",\n      \"tax_trade\": \"string\"\n    },\n    \"legal_name\": \"string\",\n    \"merchant_category_code\": \"string\",\n    \"merchant_size\": \"small\",\n    \"physical_address\": {\n      \"city\": \"string\",\n      \"country\": \"CL\",\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"product_category\": \"software\",\n    \"product_description\": \"string\",\n    \"type\": \"company\",\n    \"website\": \"string\"\n  },\n  \"created\": 6393,\n  \"id\": \"string\",\n  \"link\": \"string\",\n  \"livemode\": false,\n  \"logo_id\": \"string\",\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"nickname\": \"string\",\n  \"object\": \"account\",\n  \"parent_account_id\": \"string\",\n  \"sub_type\": \"referrer\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"status\": \"deactivated\",\n  \"tos_acceptance\": {\n    \"ip\": \"string\",\n    \"time\": 6731,\n    \"user_agent\": \"string\"\n  },\n  \"type\": \"user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "329587c2-41b7-4500-9289-e94cdd805415",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account",
+                    "activate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "102b6bec-3c6b-4d13-8af7-cda7219a1037",
+          "name": "Deactivate Account",
+          "request": {
+            "name": "Deactivate Account",
+            "description": {
+              "content": "Deactivates an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                ":account",
+                "deactivate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "593ff50c-3623-46ea-816e-3fa912114aa7",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account",
+                    "deactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": \"activated\",\n  \"business_details\": {\n    \"date_of_incorporation\": \"string\",\n    \"dba\": \"string\",\n    \"email\": \"DZq7J9h9@oMhrPmmgalMsQQkXmtcKHtOEOjHnnMlp.fcw\",\n    \"ids\": {\n      \"business\": \"string\",\n      \"tax\": \"string\",\n      \"tax_deduction\": \"string\",\n      \"tax_gst\": \"string\",\n      \"tax_trade\": \"string\"\n    },\n    \"legal_name\": \"string\",\n    \"merchant_category_code\": \"string\",\n    \"merchant_size\": \"small\",\n    \"physical_address\": {\n      \"city\": \"string\",\n      \"country\": \"CL\",\n      \"line1\": \"string\",\n      \"line2\": \"string\",\n      \"postal_code\": \"string\",\n      \"state\": \"string\"\n    },\n    \"product_category\": \"software\",\n    \"product_description\": \"string\",\n    \"type\": \"company\",\n    \"website\": \"string\"\n  },\n  \"created\": 6393,\n  \"id\": \"string\",\n  \"link\": \"string\",\n  \"livemode\": false,\n  \"logo_id\": \"string\",\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"nickname\": \"string\",\n  \"object\": \"account\",\n  \"parent_account_id\": \"string\",\n  \"sub_type\": \"referrer\",\n  \"supporting_documentation\": {\n    \"id_document\": \"string\"\n  },\n  \"status\": \"deactivated\",\n  \"tos_acceptance\": {\n    \"ip\": \"string\",\n    \"time\": 6731,\n    \"user_agent\": \"string\"\n  },\n  \"type\": \"user\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1ff183e-b3e6-419b-a4bd-afbeb7d27394",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":account",
+                    "deactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "6067",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"parameter_range_invalid\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 5984,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0e3ecd30-54c6-4ab4-96ed-04350055cb8f",
+    "name": "Xflow Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

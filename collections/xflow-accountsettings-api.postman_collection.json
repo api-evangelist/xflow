@@ -1,0 +1,1541 @@
+{
+  "item": [
+    {
+      "id": "e1595eaa-6e3b-4a0c-adba-c9a4062fcdf2",
+      "name": "AccountSettings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff9fc9fc-eb47-4f2a-9bee-e6b8aaf152ca",
+          "name": "List Account Settings",
+          "request": {
+            "name": "List Account Settings",
+            "description": {
+              "content": "This endpoint returns all AccountSettings (filtered by the applied below query parameters) associated with the platform, connected user or direct user in question.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "account_settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "This parameter represents the account object with which the AccountSetting object is associated."
+                },
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "This parameter represents the account object with which the AccountSetting object is associated."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.connected_user",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a connected user."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.connected_user_partner",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a connected user's partner."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.partner",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a partner."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.platform",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a platform."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.user",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a user."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.enabled",
+                  "value": "<boolean>",
+                  "description": "Whether Xflow can send payouts to this account. This parameter can be set by Xflow for a direct user or by the platform on behalf of a connected user. The former is an Xflow account of `type=user` which is not connected to an account of `type=platform`."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.reason_code_not_enabled",
+                  "value": "<string>",
+                  "description": "The reason code if payouts are not enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.reason_code_not_enabled",
+                  "value": "<string>",
+                  "description": "The reason code if payouts are not enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c07cfd8-efb7-43ab-a112-a9f64625dcb9",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.connected_user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.connected_user_partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.platform",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payouts.enabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"address\": {\n        \"connected_user\": false,\n        \"connected_user_partner\": false,\n        \"partner\": true,\n        \"platform\": true,\n        \"user\": false\n      },\n      \"address_currency\": {\n        \"connected_user\": [\n          \"string\",\n          \"string\"\n        ],\n        \"connected_user_partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"platform\": [\n          \"string\",\n          \"string\"\n        ],\n        \"user\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"created\": 1676,\n      \"id\": \"string\",\n      \"live_fx\": false,\n      \"livemode\": true,\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"object\": \"account_setting\",\n      \"payouts\": {\n        \"enabled\": false,\n        \"interval\": \"daily\",\n        \"monthly_anchor\": 18,\n        \"reason_code_not_enabled\": \"string\",\n        \"weekly_anchor\": \"thursday\"\n      }\n    },\n    {\n      \"address\": {\n        \"connected_user\": true,\n        \"connected_user_partner\": true,\n        \"partner\": true,\n        \"platform\": false,\n        \"user\": false\n      },\n      \"address_currency\": {\n        \"connected_user\": [\n          \"string\",\n          \"string\"\n        ],\n        \"connected_user_partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"platform\": [\n          \"string\",\n          \"string\"\n        ],\n        \"user\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"created\": 2806,\n      \"id\": \"string\",\n      \"live_fx\": true,\n      \"livemode\": false,\n      \"metadata\": {\n        \"key_0\": \"string\"\n      },\n      \"object\": \"account_setting\",\n      \"payouts\": {\n        \"enabled\": false,\n        \"interval\": \"monthly\",\n        \"monthly_anchor\": 28,\n        \"reason_code_not_enabled\": \"string\",\n        \"weekly_anchor\": \"monday\"\n      }\n    }\n  ],\n  \"has_next\": false,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "415bf140-49ad-453d-851d-82be60d1f41b",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.connected_user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.connected_user_partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.platform",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payouts.enabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_partner_invoice_partner_mismatch\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 340,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e36491f-6231-4a46-957a-f66be2a5f379",
+          "name": "List Account Settings Connected",
+          "request": {
+            "name": "List Account Settings Connected",
+            "description": {
+              "content": "This endpoint returns all AccountSettings (filtered by the applied below query parameters) associated with the connected users of a platform.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "account_settings",
+                "connected"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "This parameter represents the account object with which the AccountSetting object is associated."
+                },
+                {
+                  "disabled": false,
+                  "key": "account_id",
+                  "value": "<string>",
+                  "description": "This parameter represents the account object with which the AccountSetting object is associated."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.connected_user",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a connected user."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.connected_user_partner",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a connected user's partner."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.partner",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a partner."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.platform",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a platform."
+                },
+                {
+                  "disabled": false,
+                  "key": "address.user",
+                  "value": "<boolean>",
+                  "description": "Indicates whether an address is available by default for a user."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.enabled",
+                  "value": "<boolean>",
+                  "description": "Whether Xflow can send payouts to this account. This parameter can be set by Xflow for a direct user or by the platform on behalf of a connected user. The former is an Xflow account of `type=user` which is not connected to an account of `type=platform`."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.reason_code_not_enabled",
+                  "value": "<string>",
+                  "description": "The reason code if payouts are not enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "payouts.reason_code_not_enabled",
+                  "value": "<string>",
+                  "description": "The reason code if payouts are not enabled."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32d7fab8-f3e0-413f-bb45-2c873727de3d",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    "connected"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.connected_user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.connected_user_partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.platform",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payouts.enabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"address\": {\n        \"connected_user\": true,\n        \"connected_user_partner\": false,\n        \"partner\": true,\n        \"platform\": true,\n        \"user\": true\n      },\n      \"address_currency\": {\n        \"connected_user\": [\n          \"string\",\n          \"string\"\n        ],\n        \"connected_user_partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"platform\": [\n          \"string\",\n          \"string\"\n        ],\n        \"user\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"created\": 8942,\n      \"id\": \"string\",\n      \"live_fx\": false,\n      \"livemode\": true,\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"object\": \"account_setting\",\n      \"payouts\": {\n        \"enabled\": false,\n        \"interval\": \"weekly\",\n        \"monthly_anchor\": 9,\n        \"reason_code_not_enabled\": \"string\",\n        \"weekly_anchor\": \"saturday\"\n      }\n    },\n    {\n      \"address\": {\n        \"connected_user\": true,\n        \"connected_user_partner\": true,\n        \"partner\": false,\n        \"platform\": true,\n        \"user\": false\n      },\n      \"address_currency\": {\n        \"connected_user\": [\n          \"string\",\n          \"string\"\n        ],\n        \"connected_user_partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"partner\": [\n          \"string\",\n          \"string\"\n        ],\n        \"platform\": [\n          \"string\",\n          \"string\"\n        ],\n        \"user\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"created\": 4037,\n      \"id\": \"string\",\n      \"live_fx\": true,\n      \"livemode\": true,\n      \"metadata\": {\n        \"key_0\": \"string\"\n      },\n      \"object\": \"account_setting\",\n      \"payouts\": {\n        \"enabled\": false,\n        \"interval\": \"monthly\",\n        \"monthly_anchor\": 26,\n        \"reason_code_not_enabled\": \"string\",\n        \"weekly_anchor\": \"saturday\"\n      }\n    }\n  ],\n  \"has_next\": true,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87c9d698-f966-44e2-a3bf-49f39918a6ef",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    "connected"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "account_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.connected_user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.connected_user_partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.partner",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.platform",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "address.user",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "payouts.enabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "payouts.reason_code_not_enabled",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_partner_invoice_partner_mismatch\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 340,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a8371a6-f3be-4eed-bd3e-2e89bb966685",
+          "name": "Retrieve Account Setting",
+          "request": {
+            "name": "Retrieve Account Setting",
+            "description": {
+              "content": "Retrieves the details of an AccountSetting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "account_settings",
+                ":account_setting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_setting",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9bb81b7-6251-4ac1-b4ba-adf535ab0a32",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    ":account_setting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_setting",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"connected_user\": true,\n    \"connected_user_partner\": false,\n    \"partner\": true,\n    \"platform\": false,\n    \"user\": false\n  },\n  \"address_currency\": {\n    \"connected_user\": [\n      \"string\",\n      \"string\"\n    ],\n    \"connected_user_partner\": [\n      \"string\",\n      \"string\"\n    ],\n    \"partner\": [\n      \"string\",\n      \"string\"\n    ],\n    \"platform\": [\n      \"string\",\n      \"string\"\n    ],\n    \"user\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"created\": 7479,\n  \"id\": \"string\",\n  \"live_fx\": true,\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"object\": \"account_setting\",\n  \"payouts\": {\n    \"enabled\": true,\n    \"interval\": \"daily\",\n    \"monthly_anchor\": 6,\n    \"reason_code_not_enabled\": \"string\",\n    \"weekly_anchor\": \"wednesday\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "361aab88-7f09-4223-aefb-b073383688c9",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    ":account_setting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_setting",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_partner_invoice_partner_mismatch\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 340,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f343da1-eab9-4ba7-baec-b6161b566fa3",
+          "name": "Update Account Setting",
+          "request": {
+            "name": "Update Account Setting",
+            "description": {
+              "content": "Update the details of an AccountSetting.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "account_settings",
+                ":account_setting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "account_setting",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"address\": {\n    \"connected_user\": \"<boolean>\",\n    \"connected_user_partner\": \"<boolean>\",\n    \"partner\": \"<boolean>\"\n  },\n  \"address_currency\": {\n    \"connected_user\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"connected_user_partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"payouts\": {\n    \"enabled\": \"<boolean>\",\n    \"interval\": \"<string>\",\n    \"monthly_anchor\": \"<long>\",\n    \"weekly_anchor\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "656e4150-abeb-4e65-b2e0-be4f94fa88a9",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    ":account_setting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_setting",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": {\n    \"connected_user\": \"<boolean>\",\n    \"connected_user_partner\": \"<boolean>\",\n    \"partner\": \"<boolean>\"\n  },\n  \"address_currency\": {\n    \"connected_user\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"connected_user_partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"payouts\": {\n    \"enabled\": \"<boolean>\",\n    \"interval\": \"<string>\",\n    \"monthly_anchor\": \"<long>\",\n    \"weekly_anchor\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"connected_user\": true,\n    \"connected_user_partner\": false,\n    \"partner\": true,\n    \"platform\": false,\n    \"user\": false\n  },\n  \"address_currency\": {\n    \"connected_user\": [\n      \"string\",\n      \"string\"\n    ],\n    \"connected_user_partner\": [\n      \"string\",\n      \"string\"\n    ],\n    \"partner\": [\n      \"string\",\n      \"string\"\n    ],\n    \"platform\": [\n      \"string\",\n      \"string\"\n    ],\n    \"user\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"created\": 7479,\n  \"id\": \"string\",\n  \"live_fx\": true,\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"object\": \"account_setting\",\n  \"payouts\": {\n    \"enabled\": true,\n    \"interval\": \"daily\",\n    \"monthly_anchor\": 6,\n    \"reason_code_not_enabled\": \"string\",\n    \"weekly_anchor\": \"wednesday\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4e19fba2-2805-476e-b246-8b93600d6bfe",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "account_settings",
+                    ":account_setting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "account_setting",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"address\": {\n    \"connected_user\": \"<boolean>\",\n    \"connected_user_partner\": \"<boolean>\",\n    \"partner\": \"<boolean>\"\n  },\n  \"address_currency\": {\n    \"connected_user\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"connected_user_partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"partner\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"user\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"payouts\": {\n    \"enabled\": \"<boolean>\",\n    \"interval\": \"<string>\",\n    \"monthly_anchor\": \"<long>\",\n    \"weekly_anchor\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "1476",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"receivable_partner_invoice_partner_mismatch\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 340,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b08589f7-f860-4809-8b0c-b259b5f0988c",
+    "name": "Xflow Accounts AccountSettings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}

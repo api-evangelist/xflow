@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts Balance API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Balance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "RetrieveBalance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/balance",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier for the account object for which this balance is associated. If this is not specified, then the balance object will be returned for the context that the user is in."
+              }
+            ]
+          },
+          "docs": "Retrieve a balance."
+        },
+        {
+          "info": {
+            "name": "RetrieveAggregateBalance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/balance/aggregate",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier for the account object for which this balance is associated. If this is not specified, then the balance object will be returned for the context that the user is in."
+              }
+            ]
+          },
+          "docs": "Retrieve an aggregate balance."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

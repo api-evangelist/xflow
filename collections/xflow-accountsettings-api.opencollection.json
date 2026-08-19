@@ -1,0 +1,306 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Xflow Accounts AccountSettings API",
+    "version": "2024-02-05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AccountSettings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "ListAccountSettings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/account_settings",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "This parameter represents the account object with which the AccountSetting object is associated."
+              },
+              {
+                "name": "address.connected_user",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a connected user."
+              },
+              {
+                "name": "address.connected_user_partner",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a connected user's partner."
+              },
+              {
+                "name": "address.partner",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a partner."
+              },
+              {
+                "name": "address.platform",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a platform."
+              },
+              {
+                "name": "address.user",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a user."
+              },
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "payouts.enabled",
+                "value": "",
+                "type": "query",
+                "description": "Whether Xflow can send payouts to this account. This parameter can be set by Xflow for a direct user or by the platform on behalf of a connected user. The former is an Xflow account of `type=user` which is not connected to an account of `type=platform`."
+              },
+              {
+                "name": "payouts.reason_code_not_enabled",
+                "value": "",
+                "type": "query",
+                "description": "The reason code if payouts are not enabled."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              }
+            ]
+          },
+          "docs": "This endpoint returns all AccountSettings (filtered by the applied below query parameters) associated with the platform, connected user or direct user in question."
+        },
+        {
+          "info": {
+            "name": "ListAccountSettingsConnected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/account_settings/connected",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "query",
+                "description": "This parameter represents the account object with which the AccountSetting object is associated."
+              },
+              {
+                "name": "address.connected_user",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a connected user."
+              },
+              {
+                "name": "address.connected_user_partner",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a connected user's partner."
+              },
+              {
+                "name": "address.partner",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a partner."
+              },
+              {
+                "name": "address.platform",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a platform."
+              },
+              {
+                "name": "address.user",
+                "value": "",
+                "type": "query",
+                "description": "Indicates whether an address is available by default for a user."
+              },
+              {
+                "name": "created.eq",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.gte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lt",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "created.lte",
+                "value": "",
+                "type": "query",
+                "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+              },
+              {
+                "name": "ending_before",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+              },
+              {
+                "name": "payouts.enabled",
+                "value": "",
+                "type": "query",
+                "description": "Whether Xflow can send payouts to this account. This parameter can be set by Xflow for a direct user or by the platform on behalf of a connected user. The former is an Xflow account of `type=user` which is not connected to an account of `type=platform`."
+              },
+              {
+                "name": "payouts.reason_code_not_enabled",
+                "value": "",
+                "type": "query",
+                "description": "The reason code if payouts are not enabled."
+              },
+              {
+                "name": "starting_after",
+                "value": "",
+                "type": "query",
+                "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+              }
+            ]
+          },
+          "docs": "This endpoint returns all AccountSettings (filtered by the applied below query parameters) associated with the connected users of a platform."
+        },
+        {
+          "info": {
+            "name": "RetrieveAccountSetting",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.xflowpay.com/v1/account_settings/:account_setting",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_setting",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves the details of an AccountSetting."
+        },
+        {
+          "info": {
+            "name": "UpdateAccountSetting",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.xflowpay.com/v1/account_settings/:account_setting",
+            "headers": [
+              {
+                "name": "Xflow-Account",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "account_setting",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the details of an AccountSetting."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1996 @@
+{
+  "item": [
+    {
+      "id": "75248b05-4a15-43e4-86cf-aa71a8e01310",
+      "name": "Receivables",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "165ed06e-8fcb-47a7-9e3e-637ddeee52ef",
+          "name": "List Receivables",
+          "request": {
+            "name": "List Receivables",
+            "description": {
+              "content": "Returns a list of receivables.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "created.eq",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.gte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is greater than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lt",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "created.lte",
+                  "value": "<unix-time>",
+                  "description": "Return results where the `created` field is lesser than or equal to the timestamp value in seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time)."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "ending_before",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `ending_before` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, starting with `obj_bar`, your subsequent call can include `ending_before=obj_bar` in order to fetch the previous page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "A limit on the number of objects to be returned, between 1 and 10. If this parameter is not specified, a default value of 10 is assumed."
+                },
+                {
+                  "disabled": false,
+                  "key": "starting_after",
+                  "value": "<string>",
+                  "description": "A cursor for use in pagination. `starting_after` is an object identifier that defines your place in the list. For instance, if you make a list request and receive 5 objects, ending with `obj_bar`, your subsequent call can include `starting_after=obj_bar` in order to fetch the next page of the list."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status for receivables."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Valid status for receivables."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d265b48-be05-4008-935b-264c8231e2e8",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"account_id\": \"string\",\n      \"amount_locked\": \"string\",\n      \"amount_maximum_reconcilable\": \"string\",\n      \"amount_reconcilable\": \"string\",\n      \"amount_reconciled\": \"string\",\n      \"amount_reconciled_not_settled\": \"string\",\n      \"amount_settled_payouts\": \"string\",\n      \"created\": 2133,\n      \"currency\": \"USD\",\n      \"deposit_ids_amount_locked\": [\n        \"string\",\n        \"string\"\n      ],\n      \"description\": \"string\",\n      \"hsn_code\": \"string\",\n      \"id\": \"string\",\n      \"invoice\": {\n        \"amount\": \"string\",\n        \"creation_date\": \"string\",\n        \"currency\": \"string\",\n        \"document\": \"string\",\n        \"due_date\": \"string\",\n        \"reference_number\": \"string\"\n      },\n      \"livemode\": true,\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"object\": \"receivable\",\n      \"purpose_code\": \"string\",\n      \"purpose_code_description\": \"string\",\n      \"status\": \"completed\",\n      \"supporting_documentation\": {\n        \"documents\": [\n          {\n            \"id\": \"string\",\n            \"file_id\": \"string\",\n            \"reconcile_id\": \"string\",\n            \"type\": \"customs\"\n          },\n          {\n            \"id\": \"string\",\n            \"file_id\": \"string\",\n            \"reconcile_id\": \"string\",\n            \"type\": \"customs\"\n          }\n        ],\n        \"status\": \"string\"\n      },\n      \"system_message\": [\n        {\n          \"code\": \"string\",\n          \"message\": \"string\"\n        },\n        {\n          \"code\": \"string\",\n          \"message\": \"string\"\n        }\n      ],\n      \"transaction_type\": \"software\"\n    },\n    {\n      \"account_id\": \"string\",\n      \"amount_locked\": \"string\",\n      \"amount_maximum_reconcilable\": \"string\",\n      \"amount_reconcilable\": \"string\",\n      \"amount_reconciled\": \"string\",\n      \"amount_reconciled_not_settled\": \"string\",\n      \"amount_settled_payouts\": \"string\",\n      \"created\": 2086,\n      \"currency\": \"AUD\",\n      \"deposit_ids_amount_locked\": [\n        \"string\",\n        \"string\"\n      ],\n      \"description\": \"string\",\n      \"hsn_code\": \"string\",\n      \"id\": \"string\",\n      \"invoice\": {\n        \"amount\": \"string\",\n        \"creation_date\": \"string\",\n        \"currency\": \"string\",\n        \"document\": \"string\",\n        \"due_date\": \"string\",\n        \"reference_number\": \"string\"\n      },\n      \"livemode\": false,\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"object\": \"receivable\",\n      \"purpose_code\": \"string\",\n      \"purpose_code_description\": \"string\",\n      \"status\": \"verifying\",\n      \"supporting_documentation\": {\n        \"documents\": [\n          {\n            \"id\": \"string\",\n            \"file_id\": \"string\",\n            \"reconcile_id\": \"string\",\n            \"type\": \"shipping\"\n          },\n          {\n            \"id\": \"string\",\n            \"file_id\": \"string\",\n            \"reconcile_id\": \"string\",\n            \"type\": \"shipping\"\n          }\n        ],\n        \"status\": \"string\"\n      },\n      \"system_message\": [\n        {\n          \"code\": \"string\",\n          \"message\": \"string\"\n        },\n        {\n          \"code\": \"string\",\n          \"message\": \"string\"\n        }\n      ],\n      \"transaction_type\": \"software\"\n    }\n  ],\n  \"has_next\": false,\n  \"object\": \"list\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "20563a94-2367-4f6e-a163-eb7291ae5f85",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "created.eq",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.gte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lt",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "created.lte",
+                      "value": "<unix-time>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ending_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "starting_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a05ddad1-2dde-41e1-b448-ad1c06b340c3",
+          "name": "Create Receivable",
+          "request": {
+            "name": "Create Receivable",
+            "description": {
+              "content": "Create a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6251f15-ac99-4028-ac29-65a85fa95ce9",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb088dec-970c-4fe5-8ba5-56fdda5f7eea",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c2341df-eafd-4092-8892-aaa7bdda6fa0",
+          "name": "Retrieve Receivable",
+          "request": {
+            "name": "Retrieve Receivable",
+            "description": {
+              "content": "Retrieves the details of a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables",
+                ":receivable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receivable",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d660f140-267f-40da-9fb3-c709255d2da5",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "935b48df-7230-4804-8551-21029096046a",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc3ba69f-4be5-4a2d-963c-a6e9d3538a26",
+          "name": "Update Receivable",
+          "request": {
+            "name": "Update Receivable",
+            "description": {
+              "content": "Update the details of a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables",
+                ":receivable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receivable",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e814fe5-6ed2-49d0-9d79-401d632c5ece",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5192941a-3f65-439f-affb-5f3b31c0467e",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account_id\": \"<string>\",\n  \"amount_maximum_reconcilable\": \"<string>\",\n  \"currency\": \"<string>\",\n  \"description\": \"<string>\",\n  \"hsn_code\": \"<string>\",\n  \"invoice\": {\n    \"amount\": \"<string>\",\n    \"creation_date\": \"<string>\",\n    \"currency\": \"<string>\",\n    \"document\": \"<string>\",\n    \"due_date\": \"<string>\",\n    \"reference_number\": \"<string>\"\n  },\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  },\n  \"purpose_code\": \"<string>\",\n  \"purpose_code_description\": \"<string>\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"id\": \"<string>\",\n        \"file_id\": \"<string>\",\n        \"reconcile_id\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"status\": \"<string>\"\n  },\n  \"transaction_type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b95c518e-8ce2-4a4d-88d9-f25f19777f2f",
+          "name": "Confirm Receivable",
+          "request": {
+            "name": "Confirm Receivable",
+            "description": {
+              "content": "Confirm the details of a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables",
+                ":receivable",
+                "confirm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receivable",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "485b2340-82cc-4f16-873c-164f4ad9d17d",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41e1ad0e-bb4c-4546-b651-c76464025247",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "confirm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41139efb-5839-408d-a211-967b824c673b",
+          "name": "Cancel Receivable",
+          "request": {
+            "name": "Cancel Receivable",
+            "description": {
+              "content": "Cancel a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables",
+                ":receivable",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receivable",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09c5274a-3fec-4304-99f1-f10e6cc14fc9",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3dfc49f2-15c0-4140-b8a0-abfb53f079db",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e52cbda-db28-47b5-a786-4430685163ad",
+          "name": "Reconcile Receivable",
+          "request": {
+            "name": "Reconcile Receivable",
+            "description": {
+              "content": "Reconcile a receivable.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "receivables",
+                ":receivable",
+                "reconcile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "receivable",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                "key": "Xflow-Account",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "deaa0363-d417-4cb3-8937-2e82fa38750a",
+              "name": "Successful response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "reconcile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"account_id\": \"string\",\n  \"amount_locked\": \"string\",\n  \"amount_maximum_reconcilable\": \"string\",\n  \"amount_reconcilable\": \"string\",\n  \"amount_reconciled\": \"string\",\n  \"amount_reconciled_not_settled\": \"string\",\n  \"amount_settled_payouts\": \"string\",\n  \"created\": 3368,\n  \"currency\": \"AUD\",\n  \"deposit_ids_amount_locked\": [\n    \"string\",\n    \"string\"\n  ],\n  \"description\": \"string\",\n  \"hsn_code\": \"string\",\n  \"id\": \"string\",\n  \"invoice\": {\n    \"amount\": \"string\",\n    \"creation_date\": \"string\",\n    \"currency\": \"string\",\n    \"document\": \"string\",\n    \"due_date\": \"string\",\n    \"reference_number\": \"string\"\n  },\n  \"livemode\": true,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"object\": \"receivable\",\n  \"purpose_code\": \"string\",\n  \"purpose_code_description\": \"string\",\n  \"status\": \"hold\",\n  \"supporting_documentation\": {\n    \"documents\": [\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"customs\"\n      },\n      {\n        \"id\": \"string\",\n        \"file_id\": \"string\",\n        \"reconcile_id\": \"string\",\n        \"type\": \"shipping\"\n      }\n    ],\n    \"status\": \"string\"\n  },\n  \"system_message\": [\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    },\n    {\n      \"code\": \"string\",\n      \"message\": \"string\"\n    }\n  ],\n  \"transaction_type\": \"services\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5bb2844a-cc91-4903-bf38-bee4fd9681f1",
+              "name": "Error response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "receivables",
+                    ":receivable",
+                    "reconcile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "receivable",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "This header specifies the connected user's account on behalf of which the request is being made.",
+                    "key": "Xflow-Account",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "key": "Date",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Content-Length",
+                  "value": "606",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "Connection",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amzn-RequestId",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "xflow-request-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "x-amz-apigw-id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "X-Amzn-Trace-Id",
+                  "value": "string",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"errors\": [\n    {\n      \"code\": \"multiple_xflow_receive_same_category_not_allowed\",\n      \"message\": \"string\",\n      \"metadata\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    }\n  ],\n  \"http_status_code\": 9170,\n  \"object\": \"error\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.xflowpay.com/",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ac39c836-2e86-4b80-948f-b9c043fd240f",
+    "name": "Xflow Accounts Receivables API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.\n\nContact Support:\n Name: Xflow Support\n Email: support@xflowpay.com",
+      "type": "text/plain"
+    }
+  }
+}
