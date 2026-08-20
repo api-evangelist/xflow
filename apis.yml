@@ -44,6 +44,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -58,6 +60,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Account Settings
+  tags_raw:
   - AccountSettings
   properties:
   - type: OpenAPI
@@ -86,6 +90,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Balances
+  tags_raw:
   - Balance
   properties:
   - type: OpenAPI
@@ -100,6 +106,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Balance Transactions
+  tags_raw:
   - BalanceTransactions
   properties:
   - type: OpenAPI
@@ -128,6 +136,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -142,6 +152,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Exchange Rates
+  tags_raw:
   - ExchangeRates
   properties:
   - type: OpenAPI
@@ -170,6 +182,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -184,6 +198,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Payment Links
+  tags_raw:
   - PaymentLinks
   properties:
   - type: OpenAPI
@@ -282,6 +298,8 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
+  - Webhook Endpoints
+  tags_raw:
   - WebhookEndpoints
   properties:
   - type: OpenAPI
