@@ -118,7 +118,7 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
-  - Balance Transactions
+  - BalanceTransactions
   tags_raw:
   - BalanceTransactions
   properties:
@@ -210,7 +210,7 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
-  - Payment Links
+  - PaymentLinks
   tags_raw:
   - PaymentLinks
   properties:
@@ -310,7 +310,7 @@ apis:
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
-  - Webhook Endpoints
+  - WebhookEndpoints
   tags_raw:
   - WebhookEndpoints
   properties:
