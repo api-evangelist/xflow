@@ -68,22 +68,6 @@ apis:
     url: https://docs.xflowpay.com/
   - type: APIReference
     url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-accountsettings-api
-  name: Xflow AccountSettings API
-  description: The AccountSettings API from Xflow — 3 operation(s) for accountsettings.
-  humanURL: https://docs.xflowpay.com/latest/api
-  baseURL: https://api.xflowpay.com
-  tags:
-  - Account Settings
-  tags_raw:
-  - AccountSettings
-  properties:
-  - type: OpenAPI
-    url: openapi/xflow-accountsettings-api-openapi.yml
-  - type: Documentation
-    url: https://docs.xflowpay.com/
-  - type: APIReference
-    url: https://docs.xflowpay.com/latest/api
 - aid: xflow:xflow-addresses-api
   name: Xflow Addresses API
   description: The Addresses API from Xflow — 2 operation(s) for addresses.
@@ -110,22 +94,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/xflow-balance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.xflowpay.com/
-  - type: APIReference
-    url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-balancetransactions-api
-  name: Xflow BalanceTransactions API
-  description: The BalanceTransactions API from Xflow — 2 operation(s) for balancetransactions.
-  humanURL: https://docs.xflowpay.com/latest/api
-  baseURL: https://api.xflowpay.com
-  tags:
-  - Balance Transactions
-  tags_raw:
-  - BalanceTransactions
-  properties:
-  - type: OpenAPI
-    url: openapi/xflow-balancetransactions-api-openapi.yml
   - type: Documentation
     url: https://docs.xflowpay.com/
   - type: APIReference
@@ -160,36 +128,6 @@ apis:
     url: https://docs.xflowpay.com/
   - type: APIReference
     url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-exchangerates-api
-  name: Xflow ExchangeRates API
-  description: The ExchangeRates API from Xflow — 2 operation(s) for exchangerates.
-  humanURL: https://docs.xflowpay.com/latest/api
-  baseURL: https://api.xflowpay.com
-  tags:
-  - Exchange Rates
-  tags_raw:
-  - ExchangeRates
-  properties:
-  - type: OpenAPI
-    url: openapi/xflow-exchangerates-api-openapi.yml
-  - type: Documentation
-    url: https://docs.xflowpay.com/
-  - type: APIReference
-    url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-feeplans-api
-  name: Xflow FeePlans API
-  description: The FeePlans API from Xflow — 2 operation(s) for feeplans.
-  humanURL: https://docs.xflowpay.com/latest/api
-  baseURL: https://api.xflowpay.com
-  tags:
-  - FeePlans
-  properties:
-  - type: OpenAPI
-    url: openapi/xflow-feeplans-api-openapi.yml
-  - type: Documentation
-    url: https://docs.xflowpay.com/
-  - type: APIReference
-    url: https://docs.xflowpay.com/latest/api
 - aid: xflow:xflow-files-api
   name: Xflow Files API
   description: The Files API from Xflow — 3 operation(s) for files.
@@ -202,22 +140,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/xflow-files-api-openapi.yml
-  - type: Documentation
-    url: https://docs.xflowpay.com/
-  - type: APIReference
-    url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-paymentlinks-api
-  name: Xflow PaymentLinks API
-  description: The PaymentLinks API from Xflow — 6 operation(s) for paymentlinks.
-  humanURL: https://docs.xflowpay.com/latest/api
-  baseURL: https://api.xflowpay.com
-  tags:
-  - Payment Links
-  tags_raw:
-  - PaymentLinks
-  properties:
-  - type: OpenAPI
-    url: openapi/xflow-paymentlinks-api-openapi.yml
   - type: Documentation
     url: https://docs.xflowpay.com/
   - type: APIReference
@@ -306,18 +228,86 @@ apis:
     url: https://docs.xflowpay.com/
   - type: APIReference
     url: https://docs.xflowpay.com/latest/api
-- aid: xflow:xflow-webhookendpoints-api
-  name: Xflow WebhookEndpoints API
-  description: The WebhookEndpoints API from Xflow — 4 operation(s) for webhookendpoints.
+- aid: xflow:xflow-account-settings-api
+  name: Xflow Account Settings API
+  description: The Account Settings API from Xflow — 3 operation(s) for account settings.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Account Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-account-settings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-balance-transactions-api
+  name: Xflow Balance Transactions API
+  description: The Balance Transactions API from Xflow — 2 operation(s) for balance transactions.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Balance Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-balance-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-exchange-rates-api
+  name: Xflow Exchange Rates API
+  description: The Exchange Rates API from Xflow — 2 operation(s) for exchange rates.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Exchange Rates
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-exchange-rates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-fee-plans-api
+  name: Xflow Fee Plans API
+  description: The Fee Plans API from Xflow — 2 operation(s) for fee plans.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Fee Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-fee-plans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-payment-links-api
+  name: Xflow Payment Links API
+  description: The Payment Links API from Xflow — 6 operation(s) for payment links.
+  humanURL: https://docs.xflowpay.com/latest/api
+  baseURL: https://api.xflowpay.com
+  tags:
+  - Payment Links
+  properties:
+  - type: OpenAPI
+    url: openapi/xflow-payment-links-api-openapi.yml
+  - type: Documentation
+    url: https://docs.xflowpay.com/
+  - type: APIReference
+    url: https://docs.xflowpay.com/latest/api
+- aid: xflow:xflow-webhook-endpoints-api
+  name: Xflow Webhook Endpoints API
+  description: The Webhook Endpoints API from Xflow — 4 operation(s) for webhook endpoints.
   humanURL: https://docs.xflowpay.com/latest/api
   baseURL: https://api.xflowpay.com
   tags:
   - Webhook Endpoints
-  tags_raw:
-  - WebhookEndpoints
   properties:
   - type: OpenAPI
-    url: openapi/xflow-webhookendpoints-api-openapi.yml
+    url: openapi/xflow-webhook-endpoints-api-openapi.yml
   - type: Documentation
     url: https://docs.xflowpay.com/
   - type: APIReference
