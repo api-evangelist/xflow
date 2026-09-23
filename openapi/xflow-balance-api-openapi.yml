@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     email: support@xflowpay.com
@@ -6,7 +6,7 @@ info:
     url: https://xflowpay.com
   description: The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.
   termsOfService: https://docs.xflowpay.com/platform-agreement
-  title: Xflow Accounts Balance API
+  title: Xflow Balance API
   version: '2024-02-05'
 servers:
 - url: https://api.xflowpay.com/
@@ -91,6 +91,8 @@ paths:
           description: Error response.
       tags:
       - Balance
+      summary: Retrieve balance
+      x-summary-source: derived
   /v1/balance/aggregate:
     get:
       description: Retrieve an aggregate balance.
@@ -167,6 +169,8 @@ paths:
           description: Error response.
       tags:
       - Balance
+      summary: Retrieve aggregate balance
+      x-summary-source: derived
 components:
   schemas:
     balance:
@@ -202,8 +206,9 @@ components:
                 type: string
             title: BalanceAvailable
             type: object
-          nullable: true
-          type: array
+          type:
+          - array
+          - 'null'
         fee_advance:
           description: Funds that have been transferred by the user to maintain balance within Xflow to enable connected users to have fees lower than the passthrough fees. This is `[]` for non-platform users.
           items:
@@ -231,8 +236,9 @@ components:
                 type: string
             title: BalanceFeeAdvance
             type: object
-          nullable: true
-          type: array
+          type:
+          - array
+          - 'null'
         livemode:
           description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
           type: boolean
@@ -268,8 +274,9 @@ components:
                 type: string
             title: BalancePayoutProcessing
             type: object
-          nullable: true
-          type: array
+          type:
+          - array
+          - 'null'
         pending:
           description: Funds that are not yet available to the user within Xflow. For example, this could be funds which have been received against a particular account identifier but have not yet been reconciled.
           items:
@@ -297,8 +304,9 @@ components:
                 type: string
             title: BalancePending
             type: object
-          nullable: true
-          type: array
+          type:
+          - array
+          - 'null'
         processing:
           description: Funds that are being processed by Xflow. This is an intermediate state. For example, transfers may result in the funds being in the processing compartment momentarily, before they reach the destination compartment.
           items:
@@ -326,8 +334,9 @@ components:
                 type: string
             title: BalanceProcessing
             type: object
-          nullable: true
-          type: array
+          type:
+          - array
+          - 'null'
       title: Balance
       type: object
     error_object:
@@ -474,9 +483,10 @@ components:
                 additionalProperties:
                   type: string
                 description: Additional information associated with the error in the form of key-value pairs.
-                nullable: true
                 title: ErrorMetadata
-                type: object
+                type:
+                - object
+                - 'null'
             title: ErrorObjectSingle
             type: object
           type: array

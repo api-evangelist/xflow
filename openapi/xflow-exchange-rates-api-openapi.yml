@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     email: support@xflowpay.com
@@ -6,14 +6,14 @@ info:
     url: https://xflowpay.com
   description: The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.
   termsOfService: https://docs.xflowpay.com/platform-agreement
-  title: Xflow Accounts ExchangeRates API
+  title: Xflow Exchange Rates API
   version: '2024-02-05'
 servers:
 - url: https://api.xflowpay.com/
 security:
 - bearerAuth: []
 tags:
-- name: ExchangeRates
+- name: Exchange Rates
 paths:
   /v1/exchange_rates:
     get:
@@ -177,7 +177,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - ExchangeRates
+      - Exchange Rates
+      summary: List exchange rates
+      x-summary-source: derived
   /v1/exchange_rates/{exchange_rate}:
     get:
       description: Retrieves the details of an ExchangeRate.
@@ -253,7 +255,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - ExchangeRates
+      - Exchange Rates
+      summary: Retrieve exchange rate
+      x-summary-source: derived
 components:
   schemas:
     exchange_rate:
@@ -478,9 +482,10 @@ components:
                 additionalProperties:
                   type: string
                 description: Additional information associated with the error in the form of key-value pairs.
-                nullable: true
                 title: ErrorMetadata
-                type: object
+                type:
+                - object
+                - 'null'
             title: ErrorObjectSingle
             type: object
           type: array

@@ -1,28 +1,11 @@
 {
   "provider": "xflow",
   "sources": [
-    "xflow-accounts-api-openapi.yml",
-    "xflow-accountsettings-api-openapi.yml",
-    "xflow-addresses-api-openapi.yml",
-    "xflow-balance-api-openapi.yml",
-    "xflow-balancetransactions-api-openapi.yml",
-    "xflow-deposits-api-openapi.yml",
-    "xflow-events-api-openapi.yml",
-    "xflow-exchangerates-api-openapi.yml",
-    "xflow-feeplans-api-openapi.yml",
-    "xflow-files-api-openapi.yml",
-    "xflow-paymentlinks-api-openapi.yml",
-    "xflow-payments-api-openapi.yml",
-    "xflow-payouts-api-openapi.yml",
-    "xflow-persons-api-openapi.yml",
-    "xflow-quotes-api-openapi.yml",
-    "xflow-receivables-api-openapi.yml",
-    "xflow-transfers-api-openapi.yml",
-    "xflow-webhookendpoints-api-openapi.yml"
+    "_original/xflow-openapi-original.yml"
   ],
   "outputs": [
-    "xflow-accounts-api-openapi.yml",
     "xflow-accountsettings-api-openapi.yml",
+    "xflow-accounts-api-openapi.yml",
     "xflow-addresses-api-openapi.yml",
     "xflow-balance-api-openapi.yml",
     "xflow-balancetransactions-api-openapi.yml",
@@ -40,9 +23,53 @@
     "xflow-transfers-api-openapi.yml",
     "xflow-webhookendpoints-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 6 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "xflow-openapi-original.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "xflow-openapi-original.yml: declared missing tag: AccountSettings",
+    "xflow-openapi-original.yml: declared missing tag: Accounts",
+    "xflow-openapi-original.yml: declared missing tag: Addresses",
+    "xflow-openapi-original.yml: declared missing tag: Balance",
+    "xflow-openapi-original.yml: declared missing tag: BalanceTransactions",
+    "xflow-openapi-original.yml: declared missing tag: Deposits",
+    "xflow-openapi-original.yml: declared missing tag: Events",
+    "xflow-openapi-original.yml: declared missing tag: ExchangeRates",
+    "xflow-openapi-original.yml: declared missing tag: FeePlans",
+    "xflow-openapi-original.yml: declared missing tag: Files",
+    "xflow-openapi-original.yml: declared missing tag: PaymentLinks",
+    "xflow-openapi-original.yml: declared missing tag: Payments",
+    "xflow-openapi-original.yml: declared missing tag: Payouts",
+    "xflow-openapi-original.yml: declared missing tag: Persons",
+    "xflow-openapi-original.yml: declared missing tag: Quotes",
+    "xflow-openapi-original.yml: declared missing tag: Receivables",
+    "xflow-openapi-original.yml: declared missing tag: Transfers",
+    "xflow-openapi-original.yml: declared missing tag: WebhookEndpoints",
+    "superseded outputs removed: xflow-account-settings-api-openapi.yml, xflow-balance-transactions-api-openapi.yml, xflow-exchange-rates-api-openapi.yml, xflow-fee-plans-api-openapi.yml, xflow-payment-links-api-openapi.yml \u2026",
+    "apis.yml register: written (+6 apis, 18 total)"
+  ],
+  "skipped": [
+    "xflow-account-settings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-accounts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-addresses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-balance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-balance-transactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-deposits-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-exchange-rates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-fee-plans-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-files-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-payment-links-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-payouts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-persons-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-quotes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-receivables-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-transfers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "xflow-webhook-endpoints-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

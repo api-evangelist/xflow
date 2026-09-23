@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   contact:
     email: support@xflowpay.com
@@ -6,14 +6,14 @@ info:
     url: https://xflowpay.com
   description: The Xflow REST API. Please see https://docs.xflowpay.com/2024-02-05/api for more details.
   termsOfService: https://docs.xflowpay.com/platform-agreement
-  title: Xflow Accounts PaymentLinks API
+  title: Xflow Payment Links API
   version: '2024-02-05'
 servers:
 - url: https://api.xflowpay.com/
 security:
 - bearerAuth: []
 tags:
-- name: PaymentLinks
+- name: Payment Links
 paths:
   /v1/payment_links:
     get:
@@ -224,7 +224,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: List payment links
+      x-summary-source: derived
     post:
       description: Create a PaymentLink.
       operationId: CreatePaymentLink
@@ -323,7 +325,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Create payment link
+      x-summary-source: derived
   /v1/payment_links/{payment_link}:
     get:
       description: Retrieves the details of a PaymentLink.
@@ -399,7 +403,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Retrieve payment link
+      x-summary-source: derived
     post:
       description: Update the details of a PaymentLink.
       operationId: UpdatePaymentLink
@@ -487,7 +493,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Update payment link
+      x-summary-source: derived
   /v1/payment_links/{payment_link}/activate:
     post:
       description: Activate a PaymentLink.
@@ -563,7 +571,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Activate payment link
+      x-summary-source: derived
   /v1/payment_links/{payment_link}/deactivate:
     post:
       description: Deactivate a PaymentLink.
@@ -639,7 +649,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Deactivate payment link
+      x-summary-source: derived
   /v1/payment_links/{payment_link}/expire:
     post:
       description: Expire a PaymentLink.
@@ -715,7 +727,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Expire payment link
+      x-summary-source: derived
   /v1/payment_links/{payment_link}/extend:
     post:
       description: Extend a PaymentLink.
@@ -791,7 +805,9 @@ paths:
                 $ref: '#/components/schemas/error_object'
           description: Error response.
       tags:
-      - PaymentLinks
+      - Payment Links
+      summary: Extend payment link
+      x-summary-source: derived
 components:
   schemas:
     payment_link:
@@ -822,8 +838,9 @@ components:
             type: string
           description: Set of [key-value pairs](https://docs.xflowpay.com/2024-02-05/api#metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
           title: PaymentLinkMetadata
-          nullable: true
-          type: object
+          type:
+          - object
+          - 'null'
         object:
           description: String representing the object's type. Objects of the same type share the same value.
           enum:
@@ -992,9 +1009,10 @@ components:
                 additionalProperties:
                   type: string
                 description: Additional information associated with the error in the form of key-value pairs.
-                nullable: true
                 title: ErrorMetadata
-                type: object
+                type:
+                - object
+                - 'null'
             title: ErrorObjectSingle
             type: object
           type: array
