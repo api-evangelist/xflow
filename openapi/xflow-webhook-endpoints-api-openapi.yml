@@ -602,58 +602,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    webhook_endpoint:
-      description: You can configure webhook endpoints via the API to be notified about events that happen in your Xflow platform account, their connected accounts or in direct users (the latter is an Xflow account of `type=user` which is not connected to an account of `type=platform`).
-      properties:
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the WebhookEndpoint object was created.
-          format: unix-time
-          type: integer
-        description:
-          description: An arbitrary string attached to the object. Often useful for displaying to users.
-          type: string
-        enabled_events:
-          description: The list of events to enable for this endpoint. [’*’] indicates that all events are enabled.
-          maxItems: 1
-          items:
-            type: string
-          type: array
-        id:
-          description: Unique identifier for the object.
-          type: string
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        metadata:
-          additionalProperties:
-            type: string
-          description: Set of [key-value pairs](https://docs.xflowpay.com/2024-02-05/api#metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-          title: WebhookEndpointMetadata
-          type:
-          - object
-          - 'null'
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - webhook_endpoint
-          type: string
-        platform:
-          description: If `true`, the webhook endpoint will receive events for the platform. Else if `false`, the webhook endpoint will receive events for direct or connected users.
-          type: boolean
-        secret:
-          description: The endpoint’s [secret](https://docs.xflowpay.com/2024-02-05/guide#determining-the-expected-signature), used to generate webhook signatures. In livemode, the secret is returned only as part of the create response and in testmode, the secret is always available on the object.
-          type: string
-        status:
-          description: The status of the WebhookEndpoint.
-          enum:
-          - activated
-          - deactivated
-          type: string
-        url:
-          description: The https URL of the webhook endpoint.
-          type: string
-      title: WebhookEndpoint
-      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -814,6 +762,58 @@ components:
           - error
           type: string
       title: ErrorObject
+      type: object
+    webhook_endpoint:
+      description: You can configure webhook endpoints via the API to be notified about events that happen in your Xflow platform account, their connected accounts or in direct users (the latter is an Xflow account of `type=user` which is not connected to an account of `type=platform`).
+      properties:
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the WebhookEndpoint object was created.
+          format: unix-time
+          type: integer
+        description:
+          description: An arbitrary string attached to the object. Often useful for displaying to users.
+          type: string
+        enabled_events:
+          description: The list of events to enable for this endpoint. [’*’] indicates that all events are enabled.
+          maxItems: 1
+          items:
+            type: string
+          type: array
+        id:
+          description: Unique identifier for the object.
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        metadata:
+          additionalProperties:
+            type: string
+          description: Set of [key-value pairs](https://docs.xflowpay.com/2024-02-05/api#metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+          title: WebhookEndpointMetadata
+          type:
+          - object
+          - 'null'
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - webhook_endpoint
+          type: string
+        platform:
+          description: If `true`, the webhook endpoint will receive events for the platform. Else if `false`, the webhook endpoint will receive events for direct or connected users.
+          type: boolean
+        secret:
+          description: The endpoint’s [secret](https://docs.xflowpay.com/2024-02-05/guide#determining-the-expected-signature), used to generate webhook signatures. In livemode, the secret is returned only as part of the create response and in testmode, the secret is always available on the object.
+          type: string
+        status:
+          description: The status of the WebhookEndpoint.
+          enum:
+          - activated
+          - deactivated
+          type: string
+        url:
+          description: The https URL of the webhook endpoint.
+          type: string
+      title: WebhookEndpoint
       type: object
   securitySchemes:
     bearerAuth:

@@ -534,61 +534,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    file_object:
-      description: Files are documents provided by an account for a specific purpose. You can create new files accounts and retrieve existing files.
-      properties:
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the file object was created.
-          format: unix-time
-          type: integer
-        file_name:
-          description: A filename for the file, suitable for saving to a filesystem.
-          type: string
-        id:
-          description: Unique identifier for the object.
-          type: string
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        metadata:
-          additionalProperties:
-            type: string
-          description: Additional information associated with the error in the form of key-value pairs.
-          title: FileMetadata
-          type:
-          - object
-          - 'null'
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - file
-          type: string
-        purpose:
-          description: Purpose for uploading the file. The formats supported for all documents are of type `jpeg`, `pdf` and `png`. The maximum size allowed is 10MB. All documents are downloadable and never expire.
-          enum:
-          - additional_verification
-          - finance_document
-          - identity_document
-          - logo
-          - payout_confirmation
-          - tax_document
-          - transactional_document
-          type: string
-        size:
-          description: The size in bytes of the uploaded file.
-          type: integer
-        type:
-          description: 'The type of the file returned: `jpeg`, `pdf` or `png`.'
-          enum:
-          - jpeg
-          - pdf
-          - png
-          type: string
-        url:
-          description: The URL from which the file can be downloaded using your API key.
-          type: string
-      title: FileObject
-      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -749,6 +694,61 @@ components:
           - error
           type: string
       title: ErrorObject
+      type: object
+    file_object:
+      description: Files are documents provided by an account for a specific purpose. You can create new files accounts and retrieve existing files.
+      properties:
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the file object was created.
+          format: unix-time
+          type: integer
+        file_name:
+          description: A filename for the file, suitable for saving to a filesystem.
+          type: string
+        id:
+          description: Unique identifier for the object.
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        metadata:
+          additionalProperties:
+            type: string
+          description: Additional information associated with the error in the form of key-value pairs.
+          title: FileMetadata
+          type:
+          - object
+          - 'null'
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - file
+          type: string
+        purpose:
+          description: Purpose for uploading the file. The formats supported for all documents are of type `jpeg`, `pdf` and `png`. The maximum size allowed is 10MB. All documents are downloadable and never expire.
+          enum:
+          - additional_verification
+          - finance_document
+          - identity_document
+          - logo
+          - payout_confirmation
+          - tax_document
+          - transactional_document
+          type: string
+        size:
+          description: The size in bytes of the uploaded file.
+          type: integer
+        type:
+          description: 'The type of the file returned: `jpeg`, `pdf` or `png`.'
+          enum:
+          - jpeg
+          - pdf
+          - png
+          type: string
+        url:
+          description: The URL from which the file can be downloaded using your API key.
+          type: string
+      title: FileObject
       type: object
   securitySchemes:
     bearerAuth:
