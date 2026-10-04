@@ -313,6 +313,9 @@ apis:
   - type: APIReference
     url: https://docs.xflowpay.com/latest/api
 common:
+- type: CapabilityMap
+  url: capabilities/xflow-capability-edges.yml
+  name: Xflow Business Capability Map
 - type: Overlay
   url: overlays/xflow-api-overlay.yaml
 - type: Website

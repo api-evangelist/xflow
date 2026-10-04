@@ -1,0 +1,25 @@
+slug: xflow
+provider: Xflow
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Receivables
+  spec_file: xflow-receivables-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.8
+  evidence: POST /v1/receivables  CreateReceivable; POST /v1/receivables/{receivable}/reconcile  ReconcileReceivable  Reconcile
+    receivable
+  reason: Create, confirm, cancel and reconcile receivables is plainly accounts receivable lifecycle including
+    cash application/reconciliation.
