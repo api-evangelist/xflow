@@ -279,6 +279,126 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    payment:
+      description: The Payment object models real-world money movement into, within and out of Xflow. Payments lead to movement of money from source to destination and result in the creation of BalanceTransactions. Payments between different types of currencies will result in the creation of an ExchangeRate object. Xflow models fees as distinct payments as well.
+      properties:
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payment object was created.
+          format: unix-time
+          type: integer
+        fee_plan_id:
+          description: Unique identifier for the FeePlan object associated with this payment. This parameter is non-null for fees related payments.
+          type: string
+        from:
+          description: Details of the account & currency from which the funds are being transferred.
+          properties:
+            amount:
+              description: Amount value.
+              type: string
+            currency:
+              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency.
+              type: string
+          title: PaymentFrom
+          type: object
+        id:
+          description: Unique identifier for the object.
+          type: string
+        is_exchange_rate_applicable:
+          description: Has the value `true` if an ExchangeRate object is associated with this payment, otherwise the value is `false`.
+          type: boolean
+        linked_id:
+          description: Unique identifier for the object that created this underlying payment object.
+          type: string
+        linked_object:
+          description: String representing the linked object’s type. Objects of the same type share the same value.
+          enum:
+          - deposit
+          - receivable
+          - payout
+          - transfer
+          type: string
+        linked_payments:
+          description: This array of hashes contains details of the linked payment IDs
+          minItems: 1
+          items:
+            properties:
+              account_id:
+                description: This is the identifier of the account that the linked payment belongs to.
+                type: string
+              payment_id:
+                description: This is the identifier of the linked payment.
+                type: string
+              payment_type:
+                description: This is the [type](https://docs.xflowpay.com/2024-02-05/api#payment_object_type) of the linked payment.
+                enum:
+                - adjustment_negative
+                - adjustment_positive
+                - deposit_reversal
+                - fee_advance_debit
+                - funds_credit
+                - funds_debit
+                - fx_fee
+                - payout
+                - payout_failure
+                - payout_fee
+                - platform_partner_debit
+                - processing_fee
+                - reconcile
+                - reconcile_paypal
+                - transfer
+                - unfunds_debit
+                type: string
+            title: PaymentLinkedPayments
+            type: object
+          type:
+          - array
+          - 'null'
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - payment
+          type: string
+        payout_eligible_at:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payment becomes eligible for payout. This is applicable only for Payment type `reconcile`.
+          format: unix-time
+          type:
+          - integer
+          - 'null'
+        to:
+          description: Details of the account & currency to which the funds are being transferred.
+          properties:
+            amount:
+              description: Amount value.
+              type: string
+            currency:
+              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency.
+              type: string
+          title: PaymentTo
+          type: object
+        type:
+          description: Payment type.
+          enum:
+          - adjustment_negative
+          - adjustment_positive
+          - deposit_reversal
+          - fee_advance_debit
+          - funds_credit
+          - funds_debit
+          - fx_fee
+          - payout
+          - payout_failure
+          - payout_fee
+          - platform_partner_debit
+          - processing_fee
+          - reconcile
+          - transfer
+          - unfunds_debit
+          type: string
+      title: Payment
+      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -439,126 +559,6 @@ components:
           - error
           type: string
       title: ErrorObject
-      type: object
-    payment:
-      description: The Payment object models real-world money movement into, within and out of Xflow. Payments lead to movement of money from source to destination and result in the creation of BalanceTransactions. Payments between different types of currencies will result in the creation of an ExchangeRate object. Xflow models fees as distinct payments as well.
-      properties:
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payment object was created.
-          format: unix-time
-          type: integer
-        fee_plan_id:
-          description: Unique identifier for the FeePlan object associated with this payment. This parameter is non-null for fees related payments.
-          type: string
-        from:
-          description: Details of the account & currency from which the funds are being transferred.
-          properties:
-            amount:
-              description: Amount value.
-              type: string
-            currency:
-              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency.
-              type: string
-          title: PaymentFrom
-          type: object
-        id:
-          description: Unique identifier for the object.
-          type: string
-        is_exchange_rate_applicable:
-          description: Has the value `true` if an ExchangeRate object is associated with this payment, otherwise the value is `false`.
-          type: boolean
-        linked_id:
-          description: Unique identifier for the object that created this underlying payment object.
-          type: string
-        linked_object:
-          description: String representing the linked object’s type. Objects of the same type share the same value.
-          enum:
-          - deposit
-          - receivable
-          - payout
-          - transfer
-          type: string
-        linked_payments:
-          description: This array of hashes contains details of the linked payment IDs
-          minItems: 1
-          items:
-            properties:
-              account_id:
-                description: This is the identifier of the account that the linked payment belongs to.
-                type: string
-              payment_id:
-                description: This is the identifier of the linked payment.
-                type: string
-              payment_type:
-                description: This is the [type](https://docs.xflowpay.com/2024-02-05/api#payment_object_type) of the linked payment.
-                enum:
-                - adjustment_negative
-                - adjustment_positive
-                - deposit_reversal
-                - fee_advance_debit
-                - funds_credit
-                - funds_debit
-                - fx_fee
-                - payout
-                - payout_failure
-                - payout_fee
-                - platform_partner_debit
-                - processing_fee
-                - reconcile
-                - reconcile_paypal
-                - transfer
-                - unfunds_debit
-                type: string
-            title: PaymentLinkedPayments
-            type: object
-          type:
-          - array
-          - 'null'
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - payment
-          type: string
-        payout_eligible_at:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payment becomes eligible for payout. This is applicable only for Payment type `reconcile`.
-          format: unix-time
-          type:
-          - integer
-          - 'null'
-        to:
-          description: Details of the account & currency to which the funds are being transferred.
-          properties:
-            amount:
-              description: Amount value.
-              type: string
-            currency:
-              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the currency.
-              type: string
-          title: PaymentTo
-          type: object
-        type:
-          description: Payment type.
-          enum:
-          - adjustment_negative
-          - adjustment_positive
-          - deposit_reversal
-          - fee_advance_debit
-          - funds_credit
-          - funds_debit
-          - fx_fee
-          - payout
-          - payout_failure
-          - payout_fee
-          - platform_partner_debit
-          - processing_fee
-          - reconcile
-          - transfer
-          - unfunds_debit
-          type: string
-      title: Payment
       type: object
   securitySchemes:
     bearerAuth:

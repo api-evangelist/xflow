@@ -295,6 +295,69 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    event:
+      description: Events are Xflow's way of letting you know when something interesting happens in your account. When an interesting event occurs, we create a new event object. For example, when a deposit is received, we create a `deposit.status.completed event`. Note that many API requests may cause multiple events to be created.
+      properties:
+        account_id:
+          description: The identifier for the account to which the associated object that generated this event belongs.
+          type:
+          - string
+          - 'null'
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the event object was created.
+          format: unix-time
+          type: integer
+        id:
+          description: Unique identifier for the object.
+          type: string
+        linked_id:
+          description: The identifier of the object that generated this event.
+          type: string
+        linked_object:
+          description: The type of the object that generated this event.
+          enum:
+          - account
+          - address
+          - deposit
+          - receivable
+          - payout
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - event
+          type: string
+        type:
+          description: Description of the event (e.g., `deposit.status.completed`). You can find the full list of event types [here](https://docs.xflowpay.com/2024-02-05/api#types-of-events).
+          enum:
+          - account.address.activated
+          - account.payouts_enabled.updated
+          - account.status.activated
+          - account.status.hold
+          - address.created
+          - address.status.activated
+          - address.status.deactivated
+          - deposit.status.completed
+          - payout.arrival_time.updated
+          - payout.status.initialized
+          - payout.status.processing
+          - payout.status.settled
+          - payout.status.failed
+          - payout.payment_confirmation.updated
+          - receivable.amount_reconciled.updated
+          - receivable.amount_settled_payouts.updated
+          - receivable.status.activated
+          - receivable.status.cancelled
+          - receivable.status.completed
+          - receivable.status.hold
+          - receivable.status.input_required
+          - receivable.status.verifying
+          type: string
+      title: Event
+      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -455,69 +518,6 @@ components:
           - error
           type: string
       title: ErrorObject
-      type: object
-    event:
-      description: Events are Xflow's way of letting you know when something interesting happens in your account. When an interesting event occurs, we create a new event object. For example, when a deposit is received, we create a `deposit.status.completed event`. Note that many API requests may cause multiple events to be created.
-      properties:
-        account_id:
-          description: The identifier for the account to which the associated object that generated this event belongs.
-          type:
-          - string
-          - 'null'
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the event object was created.
-          format: unix-time
-          type: integer
-        id:
-          description: Unique identifier for the object.
-          type: string
-        linked_id:
-          description: The identifier of the object that generated this event.
-          type: string
-        linked_object:
-          description: The type of the object that generated this event.
-          enum:
-          - account
-          - address
-          - deposit
-          - receivable
-          - payout
-          type: string
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - event
-          type: string
-        type:
-          description: Description of the event (e.g., `deposit.status.completed`). You can find the full list of event types [here](https://docs.xflowpay.com/2024-02-05/api#types-of-events).
-          enum:
-          - account.address.activated
-          - account.payouts_enabled.updated
-          - account.status.activated
-          - account.status.hold
-          - address.created
-          - address.status.activated
-          - address.status.deactivated
-          - deposit.status.completed
-          - payout.arrival_time.updated
-          - payout.status.initialized
-          - payout.status.processing
-          - payout.status.settled
-          - payout.status.failed
-          - payout.payment_confirmation.updated
-          - receivable.amount_reconciled.updated
-          - receivable.amount_settled_payouts.updated
-          - receivable.status.activated
-          - receivable.status.cancelled
-          - receivable.status.completed
-          - receivable.status.hold
-          - receivable.status.input_required
-          - receivable.status.verifying
-          type: string
-      title: Event
       type: object
   securitySchemes:
     bearerAuth:
