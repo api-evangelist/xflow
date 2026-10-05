@@ -1,0 +1,12 @@
+{
+ "url": "https://raw.githubusercontent.com/xflowpay/openapi/HEAD/openapi.yml",
+ "requested_url": "https://raw.githubusercontent.com/xflowpay/openapi/HEAD/openapi.yml",
+ "status": 200,
+ "content_type": "text/plain; charset=utf-8",
+ "bytes": 434978,
+ "sha256": "7dba95ab8e6a1f6aeb7330a8105a0e72f8d59f2030a3691a84f56978d3cc7c53",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
