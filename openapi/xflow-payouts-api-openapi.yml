@@ -352,98 +352,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    payout:
-      description: Payout objects are created by Xflow whenever funds are moved out of an Xflow account into a real-world destination (for a store of value).
-      properties:
-        amount:
-          description: Amount value associated with the payout.
-          type: string
-        arrival_time:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the funds are expected to be credited at the specified address. Put another way, this is the date the the payout is expected to arrive in the bank. This factors in delays like weekends or bank holidays.
-          format: unix-time
-          type:
-          - integer
-          - 'null'
-        automatic:
-          description: Has the value `true` if automatic payouts are enabled and has the value `false` if manual payouts are enabled. Currently, Xflow supports automatic payouts only.
-          type: boolean
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payout object was created.
-          format: unix-time
-          type: integer
-        currency:
-          description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
-          enum:
-          - INR
-          - USD
-          type: string
-        id:
-          description: Unique identifier for the object.
-          type: string
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        metadata:
-          additionalProperties:
-            type: string
-          description: Set of [key-value pairs](https://docs.xflowpay.com/2024-02-05/api#metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
-          title: PayoutsMetadata
-          type:
-          - object
-          - 'null'
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - payout
-          type: string
-        payment_method:
-          description: Payment method via which funds were deposited.
-          enum:
-          - domestic_credit
-          - domestic_fast_credit
-          - domestic_wire
-          - global_wire
-          type: string
-        payment_method_details:
-          description: Details of the account & currency to which the funds are being transferred.
-          properties:
-            reference_number:
-              description: This is a reference number associated with the payment method.
-              type: string
-          title: PayoutPaymentMethodDetails
-          type:
-          - object
-          - 'null'
-        payout_confirmation:
-          description: File object providing details of the payout amount. E.g. - MT 103, Payment Advice.
-          type:
-          - string
-          - 'null'
-        statement_descriptor:
-          description: Text which appears on the bank account statement.
-          type: string
-        status:
-          description: Valid status for payouts.
-          enum:
-          - initialized
-          - processing
-          - settled
-          - failed
-          - hold
-          type: string
-        to:
-          description: Details of the account & currency to which the funds are being transferred.
-          properties:
-            account_id:
-              description: Account identifier for the account to which funds are being paid out. Refer [account object](https://docs.xflowpay.com/2024-02-05/api#accounts) for more details.
-              type: string
-            address_id:
-              description: Address identifier of the account to which funds are being paid out. Refer [address object](https://docs.xflowpay.com/2024-02-05/api#addresses) for more details.
-              type: string
-          title: PayoutTo
-          type: object
-      title: Payout
-      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -604,6 +512,98 @@ components:
           - error
           type: string
       title: ErrorObject
+      type: object
+    payout:
+      description: Payout objects are created by Xflow whenever funds are moved out of an Xflow account into a real-world destination (for a store of value).
+      properties:
+        amount:
+          description: Amount value associated with the payout.
+          type: string
+        arrival_time:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the funds are expected to be credited at the specified address. Put another way, this is the date the the payout is expected to arrive in the bank. This factors in delays like weekends or bank holidays.
+          format: unix-time
+          type:
+          - integer
+          - 'null'
+        automatic:
+          description: Has the value `true` if automatic payouts are enabled and has the value `false` if manual payouts are enabled. Currently, Xflow supports automatic payouts only.
+          type: boolean
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the payout object was created.
+          format: unix-time
+          type: integer
+        currency:
+          description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
+          enum:
+          - INR
+          - USD
+          type: string
+        id:
+          description: Unique identifier for the object.
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        metadata:
+          additionalProperties:
+            type: string
+          description: Set of [key-value pairs](https://docs.xflowpay.com/2024-02-05/api#metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+          title: PayoutsMetadata
+          type:
+          - object
+          - 'null'
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - payout
+          type: string
+        payment_method:
+          description: Payment method via which funds were deposited.
+          enum:
+          - domestic_credit
+          - domestic_fast_credit
+          - domestic_wire
+          - global_wire
+          type: string
+        payment_method_details:
+          description: Details of the account & currency to which the funds are being transferred.
+          properties:
+            reference_number:
+              description: This is a reference number associated with the payment method.
+              type: string
+          title: PayoutPaymentMethodDetails
+          type:
+          - object
+          - 'null'
+        payout_confirmation:
+          description: File object providing details of the payout amount. E.g. - MT 103, Payment Advice.
+          type:
+          - string
+          - 'null'
+        statement_descriptor:
+          description: Text which appears on the bank account statement.
+          type: string
+        status:
+          description: Valid status for payouts.
+          enum:
+          - initialized
+          - processing
+          - settled
+          - failed
+          - hold
+          type: string
+        to:
+          description: Details of the account & currency to which the funds are being transferred.
+          properties:
+            account_id:
+              description: Account identifier for the account to which funds are being paid out. Refer [account object](https://docs.xflowpay.com/2024-02-05/api#accounts) for more details.
+              type: string
+            address_id:
+              description: Address identifier of the account to which funds are being paid out. Refer [address object](https://docs.xflowpay.com/2024-02-05/api#addresses) for more details.
+              type: string
+          title: PayoutTo
+          type: object
+      title: Payout
       type: object
   securitySchemes:
     bearerAuth:

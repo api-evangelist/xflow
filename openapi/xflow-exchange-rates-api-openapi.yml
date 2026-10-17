@@ -260,84 +260,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    exchange_rate:
-      description: The ExchangeRate object models the details behind currency conversion. It transparently offers details like the buy and sell amounts, what the mid-market (or inter-bank) and the user-facing rates are and (if applicable) how long the rates are valid. The ExchangeRate object is always created by a payment object.
-      properties:
-        buy:
-          description: Details of the buy amount and currency.
-          properties:
-            amount:
-              description: Buy amount value.
-              type: string
-            currency:
-              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
-              enum:
-              - INR
-              type: string
-          title: ExchangeRateBuy
-          type: object
-        created:
-          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the ExchangeRate object was created.
-          format: unix-time
-          type: integer
-        currency_pair:
-          description: The currency pair associated with buy and sell currencies.
-          type: string
-        dealt_currency:
-          description: Dealt currency denotes the fixed side of the conversion request. If `buy.amount` was specified, then `buy.currency`; else, `sell.currency` (in 3-letter [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format).
-          type: string
-        id:
-          description: Unique identifier for the object.
-          type: string
-        livemode:
-          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
-          type: boolean
-        object:
-          description: String representing the object's type. Objects of the same type share the same value.
-          enum:
-          - exchange_rate
-          type: string
-        payment_id:
-          description: Unique identifier for the payment object associated with this ExchangeRate object.
-          type: string
-        rate:
-          description: Details of the sell amount and currency.
-          properties:
-            mid_market:
-              description: For reference purposes only. This rate represents the midpoint of the current bid and ask price.
-              type: string
-            user:
-              description: The returned FX quote.
-              type: string
-            valid_from:
-              description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) from which the rates in this ExchangeRate object are valid.
-              format: unix-time
-              type: integer
-            valid_to:
-              description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) till which the rates in this ExchangeRate object are valid.
-              format: unix-time
-              type: integer
-          title: ExchangeRateRate
-          type: object
-        sell:
-          description: Details of the sell amount and currency.
-          properties:
-            amount:
-              description: Sell amount value.
-              type: string
-            currency:
-              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
-              type: string
-          title: ExchangeRateSell
-          type: object
-        type:
-          description: Types of ExchangeRate objects. For now, this only accepts type `lock` and `stp`.
-          enum:
-          - lock
-          - stp
-          type: string
-      title: ExchangeRate
-      type: object
     error_object:
       description: 'Xflow uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the `2xx` range indicate success. Codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a payment failed, etc.). Codes in the `5xx` range indicate an error with Xflow’s servers (these are rare).'
       properties:
@@ -498,6 +420,84 @@ components:
           - error
           type: string
       title: ErrorObject
+      type: object
+    exchange_rate:
+      description: The ExchangeRate object models the details behind currency conversion. It transparently offers details like the buy and sell amounts, what the mid-market (or inter-bank) and the user-facing rates are and (if applicable) how long the rates are valid. The ExchangeRate object is always created by a payment object.
+      properties:
+        buy:
+          description: Details of the buy amount and currency.
+          properties:
+            amount:
+              description: Buy amount value.
+              type: string
+            currency:
+              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
+              enum:
+              - INR
+              type: string
+          title: ExchangeRateBuy
+          type: object
+        created:
+          description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) at which the ExchangeRate object was created.
+          format: unix-time
+          type: integer
+        currency_pair:
+          description: The currency pair associated with buy and sell currencies.
+          type: string
+        dealt_currency:
+          description: Dealt currency denotes the fixed side of the conversion request. If `buy.amount` was specified, then `buy.currency`; else, `sell.currency` (in 3-letter [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format).
+          type: string
+        id:
+          description: Unique identifier for the object.
+          type: string
+        livemode:
+          description: Has the value true if the object exists in `livemode` or the value false if the object exists in `testmode`.
+          type: boolean
+        object:
+          description: String representing the object's type. Objects of the same type share the same value.
+          enum:
+          - exchange_rate
+          type: string
+        payment_id:
+          description: Unique identifier for the payment object associated with this ExchangeRate object.
+          type: string
+        rate:
+          description: Details of the sell amount and currency.
+          properties:
+            mid_market:
+              description: For reference purposes only. This rate represents the midpoint of the current bid and ask price.
+              type: string
+            user:
+              description: The returned FX quote.
+              type: string
+            valid_from:
+              description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) from which the rates in this ExchangeRate object are valid.
+              format: unix-time
+              type: integer
+            valid_to:
+              description: The seconds elapsed since [Unix epoch time](https://en.wikipedia.org/wiki/Unix_time) till which the rates in this ExchangeRate object are valid.
+              format: unix-time
+              type: integer
+          title: ExchangeRateRate
+          type: object
+        sell:
+          description: Details of the sell amount and currency.
+          properties:
+            amount:
+              description: Sell amount value.
+              type: string
+            currency:
+              description: The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) 3-digit code for the amount currency.
+              type: string
+          title: ExchangeRateSell
+          type: object
+        type:
+          description: Types of ExchangeRate objects. For now, this only accepts type `lock` and `stp`.
+          enum:
+          - lock
+          - stp
+          type: string
+      title: ExchangeRate
       type: object
   securitySchemes:
     bearerAuth:
