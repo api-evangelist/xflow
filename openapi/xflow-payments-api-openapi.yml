@@ -566,3 +566,9 @@ components:
       description: 'Bearer HTTP authentication. Allowed headers-- Authorization: Bearer <api_key>'
       scheme: bearer
       type: http
+x-provenance:
+  method: harvested
+  publisher: Xflow
+  source: https://raw.githubusercontent.com/xflowpay/openapi/HEAD/openapi.yml
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
